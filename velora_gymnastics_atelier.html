@@ -1,0 +1,3358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VELORA — Gymnastics Atelier | Where Elegance Meets Performance</title>
+  <meta name="description" content="VELORA — Gymnastics Atelier. Individually crafted luxury rhythmic and artistic gymnastics leotards for women and girls." />
+
+  <!-- Editorial Typography: Cormorant Garamond & Montserrat (Latin + Cyrillic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS & BRAND PALETTE
+       ========================================================================== */
+    :root {
+      --color-obsidian: #100F12;
+      --color-burgundy: #521C2D;
+      --color-burgundy-deep: #3C1320;
+      --color-silver: #B8B7BE;
+      --color-ivory: #F3F0ED;
+      --color-ivory-soft: #EAE5DF;
+      --color-charcoal: #29262A;
+      --color-dusty-rose: #D7BFC5;
+
+      /* Semantic Surface & Border Tokens */
+      --border-light: rgba(16, 15, 18, 0.14);
+      --border-dark: rgba(243, 240, 237, 0.16);
+      --border-rose: rgba(215, 191, 197, 0.32);
+
+      /* Typography */
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Layout & Rhythm */
+      --container-max: 1380px;
+      --gutter: clamp(1.25rem, 4vw, 4rem);
+      --section-space: clamp(5rem, 10vw, 9.5rem);
+      --header-height: 84px;
+
+      /* Motion */
+      --ease-couture: cubic-bezier(0.22, 1, 0.36, 1);
+      --transition-base: 0.45s var(--ease-couture);
+    }
+
+    /* ==========================================================================
+       2. RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--color-obsidian);
+      background-color: var(--color-ivory);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background-color: var(--color-burgundy);
+      color: var(--color-ivory);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Accessibility Focus Ring */
+    :focus-visible {
+      outline: 1px solid var(--color-burgundy);
+      outline-offset: 4px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ==========================================================================
+       3. LAYOUT & TYPOGRAPHIC UTILITIES
+       ========================================================================== */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--color-burgundy);
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background-color: currentColor;
+      opacity: 0.7;
+    }
+
+    .eyebrow--light {
+      color: var(--color-dusty-rose);
+    }
+
+    .heading-xl {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(2.8rem, 6.2vw, 5.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+    }
+
+    .heading-lg {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(2.15rem, 4.2vw, 3.6rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .heading-md {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      line-height: 1.2;
+    }
+
+    /* Architectural Buttons (Sharp 0px corners, couture hairline borders) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      padding: 1.05rem 2.1rem;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      border-radius: 0;
+      transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+      white-space: nowrap;
+    }
+
+    .btn--primary {
+      background-color: var(--color-burgundy);
+      color: var(--color-ivory);
+      border: 1px solid var(--color-burgundy);
+    }
+
+    .btn--primary:hover {
+      background-color: var(--color-obsidian);
+      border-color: var(--color-obsidian);
+      color: var(--color-ivory);
+    }
+
+    .btn--primary-light:hover {
+      background-color: var(--color-ivory);
+      border-color: var(--color-ivory);
+      color: var(--color-obsidian);
+    }
+
+    .btn--outline-dark {
+      background-color: transparent;
+      color: var(--color-obsidian);
+      border: 1px solid var(--color-obsidian);
+    }
+
+    .btn--outline-dark:hover {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+    }
+
+    .btn--outline-light {
+      background-color: transparent;
+      color: var(--color-ivory);
+      border: 1px solid rgba(243, 240, 237, 0.45);
+    }
+
+    .btn--outline-light:hover {
+      background-color: var(--color-ivory);
+      border-color: var(--color-ivory);
+      color: var(--color-obsidian);
+    }
+
+    .btn--sm {
+      padding: 0.8rem 1.45rem;
+      font-size: 0.67rem;
+      letter-spacing: 0.2em;
+    }
+
+    /* Subtle Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.9s var(--ease-couture), transform 0.9s var(--ease-couture);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       4. EDITORIAL PLACEHOLDER PLATES (MUSEUM-GRADE COUTURE FRAMES)
+       ========================================================================== */
+    .atelier-plate {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--color-charcoal);
+      border: 1px solid var(--border-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.25rem, 2.5vw, 2rem);
+      user-select: none;
+    }
+
+    .atelier-plate--ivory {
+      background-color: #E7E2DC;
+      border: 1px solid var(--border-light);
+      color: var(--color-obsidian);
+    }
+
+    .atelier-plate--obsidian {
+      background: radial-gradient(circle at 70% 25%, #241A21 0%, var(--color-obsidian) 72%);
+      border: 1px solid var(--border-dark);
+      color: var(--color-ivory);
+    }
+
+    .atelier-plate--burgundy {
+      background: radial-gradient(circle at 30% 20%, #642338 0%, var(--color-burgundy-deep) 80%);
+      border: 1px solid var(--border-rose);
+      color: var(--color-ivory);
+    }
+
+    /* Subtle couture silk/linen architectural grid overlay */
+    .atelier-plate::before {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border: 1px solid currentColor;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .atelier-plate__meta {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+
+    .atelier-plate__artwork {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-block: 1rem;
+      transition: transform 0.85s var(--ease-couture);
+    }
+
+    .atelier-plate:hover .atelier-plate__artwork {
+      transform: scale(1.03);
+    }
+
+    .atelier-plate__caption {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      border-top: 1px solid currentColor;
+      border-top-color: rgba(184, 183, 190, 0.2);
+      padding-top: 0.75rem;
+      font-size: 0.63rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.75;
+    }
+
+    .atelier-plate--ivory .atelier-plate__caption {
+      border-top-color: rgba(16, 15, 18, 0.14);
+    }
+
+    /* ==========================================================================
+       5. SECTION 1 — HEADER & NAVIGATION
+       ========================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      z-index: 1000;
+      background-color: rgba(16, 15, 18, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-dark);
+      transition: background-color 0.4s ease, height 0.4s ease, border-color 0.4s ease;
+    }
+
+    .site-header.is-scrolled {
+      background-color: rgba(16, 15, 18, 0.97);
+      height: 74px;
+    }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      color: var(--color-ivory);
+    }
+
+    .brand-logo__main {
+      font-family: var(--font-serif);
+      font-size: 1.72rem;
+      font-weight: 400;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+
+    .brand-logo__sub {
+      font-family: var(--font-sans);
+      font-size: 0.54rem;
+      font-weight: 400;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--color-dusty-rose);
+      margin-top: 0.35rem;
+    }
+
+    .primary-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.25rem, 2.3vw, 2.4rem);
+    }
+
+    .primary-nav__link {
+      position: relative;
+      font-size: 0.69rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-silver);
+      padding-block: 0.4rem;
+      transition: color 0.3s ease;
+    }
+
+    .primary-nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color-dusty-rose);
+      transition: width 0.35s var(--ease-couture);
+    }
+
+    .primary-nav__link:hover,
+    .primary-nav__link:focus-visible {
+      color: var(--color-ivory);
+    }
+
+    .primary-nav__link:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Minimal Couture Language Switcher */
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.42rem 0.65rem;
+      border: 1px solid rgba(243, 240, 237, 0.22);
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-silver);
+    }
+
+    .lang-switcher__btn {
+      color: var(--color-silver);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      padding: 0.1rem 0.15rem;
+      transition: color 0.3s ease;
+    }
+
+    .lang-switcher__btn:hover,
+    .lang-switcher__btn.is-active {
+      color: var(--color-ivory);
+      font-weight: 500;
+    }
+
+    .lang-switcher__btn.is-active {
+      border-bottom: 1px solid var(--color-dusty-rose);
+    }
+
+    .lang-switcher__sep {
+      color: rgba(243, 240, 237, 0.28);
+      user-select: none;
+    }
+
+    .mobile-drawer__footer {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .mobile-drawer__lang {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(243, 240, 237, 0.1);
+      font-size: 0.66rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-silver);
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-ivory);
+      border: 1px solid rgba(243, 240, 237, 0.2);
+    }
+
+    .hamburger-lines {
+      width: 20px;
+      height: 12px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hamburger-lines span {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-ivory);
+      transition: transform 0.35s var(--ease-couture), opacity 0.25s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger-lines span:nth-child(1) {
+      transform: translateY(5.5px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] .hamburger-lines span:nth-child(3) {
+      transform: translateY(-5.5px) rotate(-45deg);
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      inset: 0;
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      z-index: 990;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: calc(var(--header-height) + 2.5rem) var(--gutter) 2.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-12px);
+      transition: opacity 0.45s var(--ease-couture), transform 0.45s var(--ease-couture), visibility 0.45s;
+    }
+
+    .mobile-drawer.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .mobile-drawer__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+      border-top: 1px solid var(--border-dark);
+      padding-top: 2rem;
+    }
+
+    .mobile-drawer__link {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--color-ivory);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(243, 240, 237, 0.08);
+      padding-bottom: 0.85rem;
+    }
+
+    .mobile-drawer__link span {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: var(--color-dusty-rose);
+    }
+
+    /* ==========================================================================
+       6. SECTION 2 — HERO
+       ========================================================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding-top: var(--header-height);
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      display: flex;
+      align-items: stretch;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+      gap: clamp(2.5rem, 5vw, 5rem);
+      padding-block: clamp(3.5rem, 7vh, 5.5rem);
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-monogram {
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(3.3rem, 7vw, 6.4rem);
+      line-height: 0.96;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-ivory);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-sans);
+      font-size: clamp(0.72rem, 1vw, 0.84rem);
+      font-weight: 400;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--color-dusty-rose);
+      margin-top: 0.9rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-divider {
+      width: 72px;
+      height: 1px;
+      background-color: var(--color-burgundy);
+      margin-bottom: 2rem;
+    }
+
+    .hero-slogan {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.65rem, 3vw, 2.5rem);
+      line-height: 1.25;
+      color: var(--color-ivory);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-description {
+      font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+      font-weight: 300;
+      color: var(--color-silver);
+      max-width: 50ch;
+      margin-bottom: 2.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-visual {
+      height: 100%;
+      min-height: clamp(440px, 68vh, 720px);
+    }
+
+    /* ==========================================================================
+       7. SECTION 3 — COLLECTIONS (WOMEN & GIRLS)
+       ========================================================================== */
+    .collections {
+      padding-block: var(--section-space);
+      background-color: var(--color-ivory);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: clamp(3rem, 6vw, 4.75rem);
+      max-width: 720px;
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(2rem, 4vw, 3.5rem);
+    }
+
+    .collection-card {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--color-ivory);
+      border: 1px solid var(--border-light);
+      transition: border-color var(--transition-base);
+    }
+
+    .collection-card:hover {
+      border-color: var(--color-obsidian);
+    }
+
+    .collection-card__media {
+      aspect-ratio: 4 / 4.6;
+      width: 100%;
+    }
+
+    .collection-card__body {
+      padding: clamp(2rem, 3.5vw, 3rem);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1;
+    }
+
+    .collection-card__index {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--color-burgundy);
+      margin-bottom: 0.75rem;
+    }
+
+    .collection-card__title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.4vw, 2.9rem);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: var(--color-obsidian);
+    }
+
+    .collection-card__text {
+      font-size: 0.95rem;
+      color: var(--color-charcoal);
+      margin-bottom: 2rem;
+      max-width: 46ch;
+    }
+
+    .collection-card__body .btn {
+      margin-top: auto;
+    }
+
+    /* ==========================================================================
+       8. SECTION 4 — FEATURED DESIGNS GALLERY
+       ========================================================================== */
+    .featured {
+      padding-block: var(--section-space);
+      background-color: var(--color-ivory-soft);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .featured-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 1rem;
+      margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+    }
+
+    .filter-btn {
+      padding: 0.65rem 1.2rem;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-charcoal);
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--color-obsidian);
+      border-color: var(--border-light);
+    }
+
+    .filter-btn.is-active {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      border-color: var(--color-obsidian);
+    }
+
+    .designs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.75rem, 3vw, 2.75rem);
+    }
+
+    .design-item {
+      background-color: var(--color-ivory);
+      border: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-base), border-color var(--transition-base);
+    }
+
+    .design-item.is-hidden {
+      display: none;
+    }
+
+    .design-item:hover {
+      border-color: var(--color-burgundy);
+    }
+
+    .design-item__media {
+      aspect-ratio: 3 / 3.7;
+    }
+
+    .design-item__content {
+      padding: 1.75rem 1.85rem 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .design-item__category {
+      font-size: 0.63rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--color-burgundy);
+      margin-bottom: 0.6rem;
+    }
+
+    .design-item__title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--color-obsidian);
+      margin-bottom: 0.75rem;
+    }
+
+    .design-item__desc {
+      font-size: 0.88rem;
+      color: var(--color-charcoal);
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .design-item__footer {
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .design-item__bespoke {
+      font-size: 0.63rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-charcoal);
+      opacity: 0.75;
+    }
+
+    .design-item__inquire {
+      font-size: 0.67rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-burgundy);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: gap 0.3s ease, color 0.3s ease;
+    }
+
+    .design-item__inquire:hover {
+      color: var(--color-obsidian);
+      gap: 0.75rem;
+    }
+
+    /* ==========================================================================
+       9. SECTION 5 — THE ART OF CUSTOM TAILORING
+       ========================================================================== */
+    .craftsmanship {
+      padding-block: var(--section-space);
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .craft-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .craft-visual {
+      aspect-ratio: 4 / 5;
+      min-height: 440px;
+    }
+
+    .craft-content .heading-lg {
+      margin-top: 1.15rem;
+      margin-bottom: 1.75rem;
+      color: var(--color-ivory);
+    }
+
+    .craft-lead {
+      font-family: var(--font-serif);
+      font-size: clamp(1.25rem, 1.9vw, 1.55rem);
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--color-dusty-rose);
+      margin-bottom: 2.75rem;
+    }
+
+    .pillars-list {
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .pillar-item {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      align-items: baseline;
+      padding-block: 1.35rem;
+      border-bottom: 1px solid var(--border-dark);
+      transition: padding-left 0.35s var(--ease-couture);
+    }
+
+    .pillar-item:hover {
+      padding-left: 0.65rem;
+    }
+
+    .pillar-item__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--color-dusty-rose);
+    }
+
+    .pillar-item__title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      color: var(--color-ivory);
+    }
+
+    .pillar-item__sub {
+      grid-column: 2;
+      font-size: 0.84rem;
+      color: var(--color-silver);
+      margin-top: 0.25rem;
+    }
+
+    /* ==========================================================================
+       10. SECTION 6 — HOW TO ORDER
+       ========================================================================== */
+    .process {
+      padding-block: var(--section-space);
+      background-color: var(--color-ivory);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid var(--border-light);
+      border-left: 1px solid var(--border-light);
+    }
+
+    .process-step {
+      padding: clamp(1.75rem, 2.5vw, 2.5rem) clamp(1.35rem, 2vw, 1.9rem);
+      border-right: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      background-color: var(--color-ivory);
+      transition: background-color var(--transition-base);
+    }
+
+    .process-step:hover {
+      background-color: var(--color-ivory-soft);
+    }
+
+    .process-step__num {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 3.1rem;
+      line-height: 1;
+      color: var(--color-burgundy);
+      margin-bottom: 1.75rem;
+    }
+
+    .process-step__title {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--color-obsidian);
+      margin-bottom: 0.85rem;
+    }
+
+    .process-step__desc {
+      font-size: 0.86rem;
+      color: var(--color-charcoal);
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       11. SECTION 7 — CUSTOM ORDER FORM (ATELIER COMMISSION DOSSIER)
+       ========================================================================== */
+    .order-section {
+      padding-block: var(--section-space);
+      background-color: var(--color-ivory-soft);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .order-header {
+      max-width: 780px;
+      margin-inline: auto;
+      text-align: center;
+      margin-bottom: clamp(3rem, 5vw, 4.5rem);
+    }
+
+    .order-header .eyebrow {
+      justify-content: center;
+    }
+
+    .order-header .eyebrow::after {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background-color: currentColor;
+      opacity: 0.7;
+    }
+
+    .order-header .heading-lg {
+      margin-top: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .order-header p {
+      font-size: 0.98rem;
+      color: var(--color-charcoal);
+    }
+
+    .atelier-form-wrapper {
+      max-width: 1040px;
+      margin-inline: auto;
+      background-color: var(--color-ivory);
+      border: 1px solid var(--border-light);
+      padding: clamp(2rem, 5vw, 4.5rem);
+    }
+
+    .form-fieldset {
+      border: none;
+      margin-bottom: 3.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .form-fieldset:last-of-type {
+      margin-bottom: 2.5rem;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .fieldset-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .fieldset-legend {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--color-obsidian);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .fieldset-legend span {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-burgundy);
+    }
+
+    .guide-trigger {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-burgundy);
+      border-bottom: 1px solid var(--color-burgundy);
+      padding-bottom: 0.25rem;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .guide-trigger:hover {
+      color: var(--color-obsidian);
+      border-color: var(--color-obsidian);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem 2.25rem;
+    }
+
+    .form-grid--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .form-group--full {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-charcoal);
+    }
+
+    .form-label .req {
+      color: var(--color-burgundy);
+    }
+
+    .form-label .opt {
+      font-weight: 300;
+      opacity: 0.7;
+      text-transform: none;
+      letter-spacing: 0.05em;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background-color: transparent;
+      border: 1px solid rgba(16, 15, 18, 0.24);
+      border-radius: 0;
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--color-obsidian);
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(41, 38, 42, 0.45);
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-burgundy);
+      background-color: #FFFFFF;
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Custom Segmented Radio Pills */
+    .radio-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .radio-pill {
+      position: relative;
+      flex: 1;
+      min-width: 115px;
+    }
+
+    .radio-pill input {
+      position: absolute;
+      opacity: 0;
+      inset: 0;
+      cursor: pointer;
+    }
+
+    .radio-pill span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(16, 15, 18, 0.24);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-charcoal);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .radio-pill input:checked + span {
+      background-color: var(--color-obsidian);
+      border-color: var(--color-obsidian);
+      color: var(--color-ivory);
+    }
+
+    .radio-pill input:focus-visible + span {
+      outline: 1px solid var(--color-burgundy);
+      outline-offset: 2px;
+    }
+
+    /* Validation States */
+    .form-group.has-error .form-input,
+    .form-group.has-error .form-select {
+      border-color: var(--color-burgundy);
+      background-color: rgba(82, 28, 45, 0.04);
+    }
+
+    .error-msg {
+      display: none;
+      font-size: 0.72rem;
+      color: var(--color-burgundy);
+      letter-spacing: 0.04em;
+    }
+
+    .form-group.has-error .error-msg {
+      display: block;
+    }
+
+    .form-submit-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--color-charcoal);
+      max-width: 48ch;
+    }
+
+    /* Confirmation Dossier State */
+    .order-confirmation {
+      display: none;
+      padding: clamp(2rem, 4vw, 3.5rem);
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      border: 1px solid var(--color-burgundy);
+    }
+
+    .order-confirmation.is-visible {
+      display: block;
+    }
+
+    .dossier-summary {
+      margin-block: 2rem;
+      padding: 1.75rem;
+      border: 1px solid var(--border-dark);
+      background-color: rgba(255, 255, 255, 0.02);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 2rem;
+      font-size: 0.86rem;
+    }
+
+    .dossier-summary div strong {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-dusty-rose);
+      margin-bottom: 0.2rem;
+    }
+
+    /* ==========================================================================
+       12. MEASUREMENT GUIDE MODAL
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(16, 15, 18, 0.82);
+      backdrop-filter: blur(6px);
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
+    }
+
+    .modal-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-dialog {
+      width: 100%;
+      max-width: 820px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background-color: var(--color-ivory);
+      color: var(--color-obsidian);
+      border: 1px solid var(--color-obsidian);
+      padding: clamp(1.75rem, 4vw, 3rem);
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 2rem;
+    }
+
+    .modal-close {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.5rem 0.9rem;
+      border: 1px solid var(--border-light);
+    }
+
+    .modal-close:hover {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+    }
+
+    .guide-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 2.25rem;
+      align-items: center;
+    }
+
+    .guide-diagram {
+      background-color: var(--color-obsidian);
+      padding: 1.5rem;
+      border: 1px solid var(--border-light);
+    }
+
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .guide-step strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--color-burgundy);
+    }
+
+    .guide-step p {
+      font-size: 0.85rem;
+      color: var(--color-charcoal);
+    }
+
+    /* ==========================================================================
+       13. SECTION 8 — FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--color-obsidian);
+      color: var(--color-ivory);
+      padding-top: clamp(4.5rem, 8vw, 6.5rem);
+      padding-bottom: 2.5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: clamp(2.5rem, 5vw, 4.5rem);
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .footer-brand p {
+      margin-top: 1.35rem;
+      font-size: 0.88rem;
+      color: var(--color-silver);
+      max-width: 38ch;
+    }
+
+    .footer-heading {
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--color-dusty-rose);
+      margin-bottom: 1.35rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      font-size: 0.86rem;
+      color: var(--color-silver);
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-ivory);
+    }
+
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      font-size: 0.86rem;
+      color: var(--color-silver);
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-silver);
+    }
+
+    /* ==========================================================================
+       14. RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1140px) {
+      .primary-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .designs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .collections-grid,
+      .craft-grid,
+      .footer-grid,
+      .guide-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 420px;
+      }
+
+      .form-grid,
+      .form-grid--3,
+      .dossier-summary {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-actions .btn {
+        display: none;
+      }
+
+      .designs-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        width: 100%;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       SECTION 1 — HEADER
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#home" class="brand-logo" aria-label="VELORA Gymnastics Atelier Home">
+        <span class="brand-logo__main">VELORA</span>
+        <span class="brand-logo__sub" data-i18n="brand.subtitle">Gymnastics Atelier</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary Navigation">
+        <a href="#home" class="primary-nav__link" data-i18n="nav.home">Home</a>
+        <a href="#women-collection" class="primary-nav__link" data-i18n="nav.women">Women</a>
+        <a href="#girls-collection" class="primary-nav__link" data-i18n="nav.girls">Girls</a>
+        <a href="#featured-designs" class="primary-nav__link" data-i18n="nav.customDesign">Custom Design</a>
+        <a href="#about" class="primary-nav__link" data-i18n="nav.about">About</a>
+        <a href="#contact" class="primary-nav__link" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switcher" role="group" aria-label="Language Switcher">
+          <button type="button" class="lang-switcher__btn is-active" data-lang-btn="en" aria-pressed="true">EN</button>
+          <span class="lang-switcher__sep" aria-hidden="true">/</span>
+          <button type="button" class="lang-switcher__btn" data-lang-btn="ru" aria-pressed="false">RU</button>
+        </div>
+        <a href="#custom-order" class="btn btn--primary btn--primary-light btn--sm" data-i18n="nav.cta">Request Your Design</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="hamburger-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <nav class="mobile-drawer__nav" aria-label="Mobile Navigation">
+      <a href="#home" class="mobile-drawer__link"><span class="mobile-drawer__text" data-i18n="nav.home">Home</span> <span>01</span></a>
+      <a href="#women-collection" class="mobile-drawer__link"><span class="mobile-drawer__text" data-i18n="nav.women">Women</span> <span>02</span></a>
+      <a href="#girls-collection" class="mobile-drawer__link"><span class="mobile-drawer__text" data-i18n="nav.girls">Girls</span> <span>03</span></a>
+      <a href="#featured-designs" class="mobile-drawer__link"><span class="mobile-drawer__text" data-i18n="nav.customDesign">Custom Design</span> <span>04</span></a>
+      <a href="#about" class="mobile-drawer__link"><span class="mobile-drawer__text" data-i18n="nav.about">About</span> <span>05</span></a>
+      <a href="#contact" class="mobile-drawer__link"><span class="mobile-drawer__text" data-i18n="nav.contact">Contact</span> <span>06</span></a>
+    </nav>
+    <div class="mobile-drawer__footer">
+      <div class="mobile-drawer__lang">
+        <span data-i18n="nav.languageLabel">Language</span>
+        <div class="lang-switcher" role="group" aria-label="Mobile Language Switcher">
+          <button type="button" class="lang-switcher__btn is-active" data-lang-btn="en" aria-pressed="true">EN</button>
+          <span class="lang-switcher__sep" aria-hidden="true">/</span>
+          <button type="button" class="lang-switcher__btn" data-lang-btn="ru" aria-pressed="false">RU</button>
+        </div>
+      </div>
+      <a href="#custom-order" class="btn btn--primary btn--primary-light" style="width: 100%;" id="mobileCta" data-i18n="nav.cta">Request Your Design</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ======================================================================
+         SECTION 2 — HERO
+         ====================================================================== -->
+    <section class="hero" id="home" aria-labelledby="heroHeading">
+      <div class="hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-monogram">
+            <span class="eyebrow eyebrow--light" data-i18n="hero.eyebrow">Bespoke Couture Atelier</span>
+          </div>
+          <h1 class="hero-title" id="heroHeading">VELORA</h1>
+          <p class="hero-subtitle" data-i18n="brand.subtitleUpper">GYMNASTICS ATELIER</p>
+          <div class="hero-divider" aria-hidden="true"></div>
+          <p class="hero-slogan" data-i18n="hero.slogan">Where Elegance Meets Performance.</p>
+          <p class="hero-description" data-i18n="hero.description">
+            Individually crafted gymnastics leotards designed to celebrate movement, elegance, and individuality.
+          </p>
+          <div class="hero-actions">
+            <a href="#custom-order" class="btn btn--primary btn--primary-light" data-i18n="hero.primaryCta">Create Your Leotard</a>
+            <a href="#collections" class="btn btn--outline-light" data-i18n="hero.secondaryCta">Explore Collection</a>
+          </div>
+        </div>
+
+        <!-- Editorial Campaign Visual Plate (Replaceable Placeholder) -->
+        <div class="hero-visual reveal">
+          <figure class="atelier-plate atelier-plate--obsidian" aria-label="Editorial campaign photograph placeholder">
+            <div class="atelier-plate__meta">
+              <span data-i18n="hero.plateMeta">PLATE 01 &mdash; CAMPAIGN EDITORIAL</span>
+              <span>RATIO 4:5</span>
+            </div>
+            <div class="atelier-plate__artwork">
+              <!-- Bespoke Haute Couture Leotard Silhouette Line-Art -->
+              <svg width="290" height="390" viewBox="0 0 290 390" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VELORA Haute Couture Leotard Silhouette Illustration">
+                <circle cx="145" cy="195" r="132" stroke="#D7BFC5" stroke-opacity="0.18" stroke-width="0.75" stroke-dasharray="3 5" />
+                <circle cx="145" cy="195" r="98" stroke="#521C2D" stroke-opacity="0.55" stroke-width="1" />
+                <!-- Architectural Couture Dress Form & Long-Sleeve Rhythmic Leotard -->
+                <path d="M112 72C123 80 167 80 178 72L218 106L242 222L228 226L200 132L186 184C181 206 188 232 196 254C178 264 160 288 145 316C130 288 112 264 94 254C102 232 109 206 104 184L90 132L62 226L48 222L72 106L112 72Z" stroke="#F3F0ED" stroke-width="1.15" />
+                <!-- Asymmetric Sheer Mesh & Appliqué Lines -->
+                <path d="M112 72C134 118 164 146 186 184" stroke="#D7BFC5" stroke-width="0.9" />
+                <path d="M178 72C155 110 124 134 104 184" stroke="#D7BFC5" stroke-opacity="0.6" stroke-width="0.8" />
+                <!-- Delicate Skirt Drape -->
+                <path d="M94 246C116 260 174 260 196 246L208 274C174 290 116 290 82 274L94 246Z" stroke="#D7BFC5" stroke-width="0.9" fill="#521C2D" fill-opacity="0.24" />
+                <!-- Crystal Placement Constellation Points -->
+                <circle cx="145" cy="126" r="2" fill="#D7BFC5" />
+                <circle cx="132" cy="144" r="1.5" fill="#F3F0ED" />
+                <circle cx="158" cy="152" r="1.5" fill="#F3F0ED" />
+                <circle cx="145" cy="172" r="2" fill="#D7BFC5" />
+                <circle cx="122" cy="202" r="1.5" fill="#D7BFC5" />
+                <circle cx="168" cy="208" r="1.5" fill="#D7BFC5" />
+                <!-- Atelier Axis Crosshairs -->
+                <line x1="145" y1="32" x2="145" y2="358" stroke="#B8B7BE" stroke-opacity="0.2" stroke-width="0.75" />
+                <line x1="36" y1="195" x2="254" y2="195" stroke="#B8B7BE" stroke-opacity="0.2" stroke-width="0.75" />
+              </svg>
+            </div>
+            <figcaption class="atelier-plate__caption">
+              <span data-i18n="hero.plateCaptionLeft">[ EDITORIAL PHOTOGRAPHY PLACEHOLDER ]</span>
+              <span data-i18n="hero.plateCaptionRight">REPLACEABLE HERO LOOKBOOK</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 3 — COLLECTIONS (WOMEN & GIRLS)
+         ====================================================================== -->
+    <section class="collections" id="collections" aria-labelledby="collectionsHeading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow" data-i18n="collections.eyebrow">Atelier Lines</span>
+          <h2 class="heading-lg" id="collectionsHeading" data-i18n="collections.heading">Tailored for Every Stage of Movement.</h2>
+        </div>
+
+        <div class="collections-grid">
+          <!-- WOMEN BLOCK -->
+          <article class="collection-card reveal" id="women-collection">
+            <div class="collection-card__media">
+              <figure class="atelier-plate atelier-plate--burgundy">
+                <div class="atelier-plate__meta">
+                  <span data-i18n="collections.women.plateMeta">LINE I &mdash; WOMEN</span>
+                  <span data-i18n="collections.plateType">EDITORIAL PORTRAIT</span>
+                </div>
+                <div class="atelier-plate__artwork">
+                  <svg width="240" height="310" viewBox="0 0 240 310" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M92 48C104 58 136 58 148 48L182 78L202 184L190 188L166 104L154 152C150 172 156 196 164 218C148 228 134 252 120 276C106 252 92 228 76 218C84 196 90 172 86 152L74 104L50 188L38 184L58 78L92 48Z" stroke="#F3F0ED" stroke-width="1.1" />
+                    <path d="M92 48C118 92 142 122 154 152" stroke="#D7BFC5" stroke-width="0.85" />
+                    <path d="M76 210C98 224 142 224 164 210L174 236C142 250 98 250 66 236L76 210Z" stroke="#D7BFC5" stroke-width="0.85" />
+                  </svg>
+                </div>
+                <figcaption class="atelier-plate__caption">
+                  <span data-i18n="collections.women.plateCaption">[ WOMEN EDITORIAL PLACEHOLDER ]</span>
+                  <span data-i18n="collections.plateReplaceable">REPLACEABLE IMAGE</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="collection-card__body">
+              <span class="collection-card__index" data-i18n="collections.women.index">Collection I</span>
+              <h3 class="collection-card__title" data-i18n="collections.women.title">WOMEN</h3>
+              <p class="collection-card__text" data-i18n="collections.women.text">
+                Elegant gymnastics leotards created for women who express strength and artistry through movement.
+              </p>
+              <a href="#featured-designs" class="btn btn--outline-dark" data-select-category="Women" data-i18n="collections.cta">Explore Collection</a>
+            </div>
+          </article>
+
+          <!-- GIRLS BLOCK -->
+          <article class="collection-card reveal" id="girls-collection">
+            <div class="collection-card__media">
+              <figure class="atelier-plate atelier-plate--ivory">
+                <div class="atelier-plate__meta">
+                  <span data-i18n="collections.girls.plateMeta">LINE II &mdash; GIRLS</span>
+                  <span data-i18n="collections.plateType">EDITORIAL PORTRAIT</span>
+                </div>
+                <div class="atelier-plate__artwork">
+                  <svg width="240" height="310" viewBox="0 0 240 310" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M96 58C106 66 134 66 144 58L174 84L190 176L179 180L158 108L148 150C144 168 150 190 156 208C142 218 130 238 120 260C110 238 98 218 84 208C90 190 96 168 92 150L82 108L61 180L50 176L66 84L96 58Z" stroke="#100F12" stroke-width="1.1" />
+                    <path d="M96 58C114 96 134 118 148 150" stroke="#521C2D" stroke-width="0.9" />
+                    <path d="M84 202C102 214 138 214 156 202L164 224C138 236 102 236 76 224L84 202Z" stroke="#521C2D" stroke-width="0.9" />
+                  </svg>
+                </div>
+                <figcaption class="atelier-plate__caption">
+                  <span data-i18n="collections.girls.plateCaption">[ GIRLS EDITORIAL PLACEHOLDER ]</span>
+                  <span data-i18n="collections.plateReplaceable">REPLACEABLE IMAGE</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="collection-card__body">
+              <span class="collection-card__index" data-i18n="collections.girls.index">Collection II</span>
+              <h3 class="collection-card__title" data-i18n="collections.girls.title">GIRLS</h3>
+              <p class="collection-card__text" data-i18n="collections.girls.text">
+                Beautifully tailored gymnastics leotards created with attention to comfort, fit, and individuality.
+              </p>
+              <a href="#featured-designs" class="btn btn--outline-dark" data-select-category="Girls" data-i18n="collections.cta">Explore Collection</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 4 — FEATURED DESIGNS GALLERY
+         ====================================================================== -->
+    <section class="featured" id="featured-designs" aria-labelledby="featuredHeading">
+      <div class="container">
+        <div class="featured-top reveal">
+          <div class="section-header" style="margin-bottom: 0;">
+            <span class="eyebrow" data-i18n="featured.eyebrow">Atelier Archive &amp; Silhouettes</span>
+            <h2 class="heading-lg" id="featuredHeading" data-i18n="featured.heading">Featured Designs.</h2>
+          </div>
+          <p style="max-width: 42ch; font-size: 0.9rem; color: var(--color-charcoal);" data-i18n="featured.intro">
+            Each silhouette serves as an artistic foundation. Every commission is individually proportioned, colored, and embellished to order.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="filter-bar" role="tablist" aria-label="Filter Featured Designs">
+          <button class="filter-btn is-active" role="tab" aria-selected="true" data-filter="all" data-i18n="featured.filters.all">All Silhouettes</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="competition" data-i18n="featured.filters.competition">Competition Leotards</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="training" data-i18n="featured.filters.training">Training Leotards</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="rhythmic" data-i18n="featured.filters.rhythmic">Rhythmic Gymnastics</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="artistic" data-i18n="featured.filters.artistic">Artistic Gymnastics</button>
+          <button class="filter-btn" role="tab" aria-selected="false" data-filter="custom" data-i18n="featured.filters.custom">Custom Designs</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="designs-grid" id="designsGrid">
+          <!-- Card 1: Competition Leotards -->
+          <article class="design-item reveal" data-tags="competition rhythmic">
+            <div class="design-item__media">
+              <figure class="atelier-plate atelier-plate--obsidian">
+                <div class="atelier-plate__meta">
+                  <span data-i18n="featured.cards.c1.study">STUDY NO. 01</span>
+                  <span data-i18n="featured.samplePlaceholder">SAMPLE PLACEHOLDER</span>
+                </div>
+                <div class="atelier-plate__artwork">
+                  <svg width="170" height="220" viewBox="0 0 170 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M64 34C74 42 96 42 106 34L132 56L146 136L136 139L118 76L110 112C107 128 112 146 118 162C106 170 95 188 85 206C75 188 64 170 52 162C58 146 63 128 60 112L52 76L34 139L24 136L38 56L64 34Z" stroke="#F3F0ED" stroke-width="1" />
+                    <path d="M52 156C68 166 102 166 118 156L126 176C102 186 68 186 44 176L52 156Z" stroke="#D7BFC5" stroke-width="0.9" />
+                    <circle cx="85" cy="92" r="2" fill="#D7BFC5" />
+                  </svg>
+                </div>
+                <figcaption class="atelier-plate__caption">
+                  <span data-i18n="featured.cards.c1.plate">[ DESIGN PLACEHOLDER 01 ]</span>
+                  <span>NOCTURNE</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="design-item__content">
+              <span class="design-item__category" data-i18n="featured.cards.c1.category">Competition Leotards</span>
+              <h3 class="design-item__title" data-i18n="featured.cards.c1.title">Nocturne Couture</h3>
+              <p class="design-item__desc" data-i18n="featured.cards.c1.desc">
+                Sculpted long-sleeve competition silhouette featuring hand-placed crystal gradations and sheer illusion mesh paneling.
+              </p>
+              <div class="design-item__footer">
+                <span class="design-item__bespoke" data-i18n="featured.madeToOrder">Made to Order</span>
+                <a href="#custom-order" class="design-item__inquire" data-prefill-purpose="Competition" data-prefill-type="Rhythmic" data-prefill-design="Existing Design" data-prefill-note-key="c1" data-i18n="featured.inquireCta">Inquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Training Leotards -->
+          <article class="design-item reveal" data-tags="training artistic">
+            <div class="design-item__media">
+              <figure class="atelier-plate atelier-plate--ivory">
+                <div class="atelier-plate__meta">
+                  <span data-i18n="featured.cards.c2.study">STUDY NO. 02</span>
+                  <span data-i18n="featured.samplePlaceholder">SAMPLE PLACEHOLDER</span>
+                </div>
+                <div class="atelier-plate__artwork">
+                  <svg width="170" height="220" viewBox="0 0 170 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M64 38C74 48 96 48 106 38L122 52L114 96C110 116 114 142 120 162C106 172 95 188 85 204C75 188 64 172 50 162C56 142 60 116 56 96L48 52L64 38Z" stroke="#100F12" stroke-width="1.05" />
+                    <path d="M58 104C74 112 96 112 112 104" stroke="#521C2D" stroke-width="0.9" />
+                  </svg>
+                </div>
+                <figcaption class="atelier-plate__caption">
+                  <span data-i18n="featured.cards.c2.plate">[ DESIGN PLACEHOLDER 02 ]</span>
+                  <span>ATELIER LINE</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="design-item__content">
+              <span class="design-item__category" data-i18n="featured.cards.c2.category">Training Leotards</span>
+              <h3 class="design-item__title" data-i18n="featured.cards.c2.title">Studio Architectural</h3>
+              <p class="design-item__desc" data-i18n="featured.cards.c2.desc">
+                Refined sleeveless training piece engineered in breathable Italian matte microfiber with velvet seam piping for daily grace.
+              </p>
+              <div class="design-item__footer">
+                <span class="design-item__bespoke" data-i18n="featured.madeToOrder">Made to Order</span>
+                <a href="#custom-order" class="design-item__inquire" data-prefill-purpose="Training" data-prefill-type="Artistic" data-prefill-design="Existing Design" data-prefill-note-key="c2" data-i18n="featured.inquireCta">Inquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Rhythmic Gymnastics -->
+          <article class="design-item reveal" data-tags="rhythmic competition">
+            <div class="design-item__media">
+              <figure class="atelier-plate atelier-plate--burgundy">
+                <div class="atelier-plate__meta">
+                  <span data-i18n="featured.cards.c3.study">STUDY NO. 03</span>
+                  <span data-i18n="featured.samplePlaceholder">SAMPLE PLACEHOLDER</span>
+                </div>
+                <div class="atelier-plate__artwork">
+                  <svg width="170" height="220" viewBox="0 0 170 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M64 34C74 42 96 42 106 34L132 56L146 136L136 139L118 76L110 112C107 128 112 146 118 162C106 170 95 188 85 206C75 188 64 170 52 162C58 146 63 128 60 112L52 76L34 139L24 136L38 56L64 34Z" stroke="#F3F0ED" stroke-width="1" />
+                    <path d="M64 34C82 68 98 94 110 112" stroke="#D7BFC5" stroke-width="0.9" />
+                    <path d="M52 154C68 164 102 164 118 154L128 182C98 194 72 190 42 178L52 154Z" stroke="#D7BFC5" stroke-width="0.9" />
+                  </svg>
+                </div>
+                <figcaption class="atelier-plate__caption">
+                  <span data-i18n="featured.cards.c3.plate">[ DESIGN PLACEHOLDER 03 ]</span>
+                  <span>ARABESQUE</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="design-item__content">
+              <span class="design-item__category" data-i18n="featured.cards.c3.category">Rhythmic Gymnastics</span>
+              <h3 class="design-item__title" data-i18n="featured.cards.c3.title">Arabesque Drape</h3>
+              <p class="design-item__desc" data-i18n="featured.cards.c3.desc">
+                Fluid asymmetrical skirted construction designed to amplify apparatus choreography, turns, and expressive extension.
+              </p>
+              <div class="design-item__footer">
+                <span class="design-item__bespoke" data-i18n="featured.madeToOrder">Made to Order</span>
+                <a href="#custom-order" class="design-item__inquire" data-prefill-purpose="Competition" data-prefill-type="Rhythmic" data-prefill-design="Existing Design" data-prefill-note-key="c3" data-i18n="featured.inquireCta">Inquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Artistic Gymnastics -->
+          <article class="design-item reveal" data-tags="artistic competition">
+            <div class="design-item__media">
+              <figure class="atelier-plate atelier-plate--obsidian">
+                <div class="atelier-plate__meta">
+                  <span data-i18n="featured.cards.c4.study">STUDY NO. 04</span>
+                  <span data-i18n="featured.samplePlaceholder">SAMPLE PLACEHOLDER</span>
+                </div>
+                <div class="atelier-plate__artwork">
+                  <svg width="170" height="220" viewBox="0 0 170 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M64 34C74 42 96 42 106 34L132 56L146 136L136 139L118 76L110 112C107 128 112 146 118 162C106 170 95 188 85 206C75 188 64 170 52 162C58 146 63 128 60 112L52 76L34 139L24 136L38 56L64 34Z" stroke="#F3F0ED" stroke-width="1" />
+                    <path d="M60 112L85 134L110 112" stroke="#D7BFC5" stroke-width="0.9" />
+                    <path d="M62 84L85 104L108 84" stroke="#521C2D" stroke-width="1.2" />
+                  </svg>
+                </div>
+                <figcaption class="atelier-plate__caption">
+                  <span data-i18n="featured.cards.c4.plate">[ DESIGN PLACEHOLDER 04 ]</span>
+                  <span>SOVEREIGN</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="design-item__content">
+              <span class="design-item__category" data-i18n="featured.cards.c4.category">Artistic Gymnastics</span>
+              <h3 class="design-item__title" data-i18n="featured.cards.c4.title">Sovereign Chevron</h3>
+              <p class="design-item__desc" data-i18n="featured.cards.c4.desc">
+                Precision-engineered bodice with sculptural velvet V-paneling and secure four-way stretch support for dynamic floor and apparatus routines.
+              </p>
+              <div class="design-item__footer">
+                <span class="design-item__bespoke" data-i18n="featured.madeToOrder">Made to Order</span>
+                <a href="#custom-order" class="design-item__inquire" data-prefill-purpose="Competition" data-prefill-type="Artistic" data-prefill-design="Existing Design" data-prefill-note-key="c4" data-i18n="featured.inquireCta">Inquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Custom Designs -->
+          <article class="design-item reveal" data-tags="custom rhythmic artistic">
+            <div class="design-item__media">
+              <figure class="atelier-plate atelier-plate--ivory">
+                <div class="atelier-plate__meta">
+                  <span data-i18n="featured.cards.c5.study">STUDY NO. 05</span>
+                  <span data-i18n="featured.bespokeSketch">BESPOKE SKETCH</span>
+                </div>
+                <div class="atelier-plate__artwork">
+                  <svg width="170" height="220" viewBox="0 0 170 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M64 34C74 42 96 42 106 34L132 56L146 136L136 139L118 76L110 112C107 128 112 146 118 162C106 170 95 188 85 206C75 188 64 170 52 162C58 146 63 128 60 112L52 76L34 139L24 136L38 56L64 34Z" stroke="#100F12" stroke-width="1" stroke-dasharray="4 3" />
+                    <line x1="85" y1="22" x2="85" y2="212" stroke="#521C2D" stroke-width="0.8" />
+                    <line x1="42" y1="112" x2="128" y2="112" stroke="#521C2D" stroke-width="0.8" />
+                  </svg>
+                </div>
+                <figcaption class="atelier-plate__caption">
+                  <span data-i18n="featured.cards.c5.plate">[ BESPOKE COMMISSION PLATE ]</span>
+                  <span data-i18n="featured.oneOfOneUpper">ONE-OF-ONE</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="design-item__content">
+              <span class="design-item__category" data-i18n="featured.cards.c5.category">Custom Designs</span>
+              <h3 class="design-item__title" data-i18n="featured.cards.c5.title">Bespoke Atelier Commission</h3>
+              <p class="design-item__desc" data-i18n="featured.cards.c5.desc">
+                An original one-of-one creation sketched exclusively around your music, routine theme, and personal palette.
+              </p>
+              <div class="design-item__footer">
+                <span class="design-item__bespoke" data-i18n="featured.oneOfOne">One-of-One</span>
+                <a href="#custom-order" class="design-item__inquire" data-prefill-purpose="Competition" data-prefill-type="Rhythmic" data-prefill-design="Custom Design" data-prefill-note-key="c5" data-i18n="featured.commissionCta">Commission &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Custom Designs / Training Edition -->
+          <article class="design-item reveal" data-tags="custom training">
+            <div class="design-item__media">
+              <figure class="atelier-plate atelier-plate--burgundy">
+                <div class="atelier-plate__meta">
+                  <span data-i18n="featured.cards.c6.study">STUDY NO. 06</span>
+                  <span data-i18n="featured.samplePlaceholder">SAMPLE PLACEHOLDER</span>
+                </div>
+                <div class="atelier-plate__artwork">
+                  <svg width="170" height="220" viewBox="0 0 170 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M64 38C74 48 96 48 106 38L122 52L114 96C110 116 114 142 120 162C106 172 95 188 85 204C75 188 64 172 50 162C56 142 60 116 56 96L48 52L64 38Z" stroke="#F3F0ED" stroke-width="1" />
+                    <path d="M56 76C76 92 94 92 114 76" stroke="#D7BFC5" stroke-width="0.9" />
+                    <path d="M54 134C74 146 96 146 116 134" stroke="#D7BFC5" stroke-width="0.9" />
+                  </svg>
+                </div>
+                <figcaption class="atelier-plate__caption">
+                  <span data-i18n="featured.cards.c6.plate">[ DESIGN PLACEHOLDER 06 ]</span>
+                  <span>ROSÉ VELVET</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="design-item__content">
+              <span class="design-item__category" data-i18n="featured.cards.c6.category">Custom Designs</span>
+              <h3 class="design-item__title" data-i18n="featured.cards.c6.title">Rosé Velvet Edition</h3>
+              <p class="design-item__desc" data-i18n="featured.cards.c6.desc">
+                Soft dusty rose silk-velvet paneling paired with tonal embroidery, customizable in sleeve length and neckline cut.
+              </p>
+              <div class="design-item__footer">
+                <span class="design-item__bespoke" data-i18n="featured.madeToOrder">Made to Order</span>
+                <a href="#custom-order" class="design-item__inquire" data-prefill-purpose="Training" data-prefill-type="Rhythmic" data-prefill-design="Custom Design" data-prefill-note-key="c6" data-i18n="featured.inquireCta">Inquire &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 5 — THE ART OF CUSTOM TAILORING
+         ====================================================================== -->
+    <section class="craftsmanship" id="about" aria-labelledby="craftHeading">
+      <div class="container">
+        <div class="craft-grid">
+          <div class="craft-visual reveal">
+            <figure class="atelier-plate atelier-plate--burgundy">
+              <div class="atelier-plate__meta">
+                <span data-i18n="craft.plateMetaLeft">ATELIER SAVOIR-FAIRE</span>
+                <span data-i18n="craft.plateMetaRight">BESPOKE PATTERNING</span>
+              </div>
+              <div class="atelier-plate__artwork">
+                <svg width="260" height="340" viewBox="0 0 260 340" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- Couture Atelier Pattern Drafting & Handcraft Illustration -->
+                  <rect x="34" y="34" width="192" height="272" stroke="#D7BFC5" stroke-opacity="0.35" stroke-width="0.8" />
+                  <path d="M78 68C96 84 164 84 182 68L194 134C186 164 190 198 198 228C172 242 150 266 130 294C110 266 88 242 62 228C70 198 74 164 66 134L78 68Z" stroke="#F3F0ED" stroke-width="1.15" />
+                  <line x1="130" y1="34" x2="130" y2="306" stroke="#D7BFC5" stroke-dasharray="4 4" stroke-width="0.8" />
+                  <line x1="34" y1="138" x2="226" y2="138" stroke="#D7BFC5" stroke-dasharray="4 4" stroke-width="0.8" />
+                  <line x1="34" y1="186" x2="226" y2="186" stroke="#D7BFC5" stroke-dasharray="4 4" stroke-width="0.8" />
+                  <circle cx="130" cy="138" r="4" stroke="#F3F0ED" stroke-width="1" />
+                  <circle cx="130" cy="186" r="4" stroke="#F3F0ED" stroke-width="1" />
+                </svg>
+              </div>
+              <figcaption class="atelier-plate__caption">
+                <span data-i18n="craft.plateCaptionLeft">[ ATELIER CRAFTSMANSHIP PLACEHOLDER ]</span>
+                <span data-i18n="craft.plateCaptionRight">HANDCRAFTED TO MEASURE</span>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="craft-content reveal">
+            <span class="eyebrow eyebrow--light" data-i18n="craft.eyebrow">The Art of Custom Tailoring</span>
+            <h2 class="heading-lg" id="craftHeading" data-i18n="craft.heading">MADE TO REFLECT YOUR MOVEMENT.</h2>
+            <p class="craft-lead" data-i18n="craft.lead">
+              “Every VELORA leotard is created with individuality in mind. From the first design idea to the final handcrafted detail, each piece is tailored to reflect the athlete's personality, style, and movement.”
+            </p>
+
+            <ul class="pillars-list">
+              <li class="pillar-item">
+                <span class="pillar-item__num">I.</span>
+                <span class="pillar-item__title" data-i18n="craft.pillars.p1.title">Individual design</span>
+                <span class="pillar-item__sub" data-i18n="craft.pillars.p1.sub">Original artistic compositions conceived around your routine, music, and presence.</span>
+              </li>
+              <li class="pillar-item">
+                <span class="pillar-item__num">II.</span>
+                <span class="pillar-item__title" data-i18n="craft.pillars.p2.title">Tailored measurements</span>
+                <span class="pillar-item__sub" data-i18n="craft.pillars.p2.sub">Drafted exclusively to your exact anatomical proportions for second-skin security.</span>
+              </li>
+              <li class="pillar-item">
+                <span class="pillar-item__num">III.</span>
+                <span class="pillar-item__title" data-i18n="craft.pillars.p3.title">Handcrafted details</span>
+                <span class="pillar-item__sub" data-i18n="craft.pillars.p3.sub">Meticulous hand-appliqué, couture seam finishing, and precision crystal placement.</span>
+              </li>
+              <li class="pillar-item">
+                <span class="pillar-item__num">IV.</span>
+                <span class="pillar-item__title" data-i18n="craft.pillars.p4.title">Thoughtful material selection</span>
+                <span class="pillar-item__sub" data-i18n="craft.pillars.p4.sub">European stretch velvets, breathable Italian lycra, and translucent illusion meshes.</span>
+              </li>
+              <li class="pillar-item">
+                <span class="pillar-item__num">V.</span>
+                <span class="pillar-item__title" data-i18n="craft.pillars.p5.title">Personal communication</span>
+                <span class="pillar-item__sub" data-i18n="craft.pillars.p5.sub">Direct, attentive consultation with our atelier from initial sketch through final fitting.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 6 — HOW TO ORDER
+         ====================================================================== -->
+    <section class="process" id="process" aria-labelledby="processHeading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow" data-i18n="process.eyebrow">Atelier Commission Process</span>
+          <h2 class="heading-lg" id="processHeading" data-i18n="process.heading">How to Order.</h2>
+        </div>
+
+        <ol class="process-grid">
+          <li class="process-step reveal">
+            <span class="process-step__num">01</span>
+            <h3 class="process-step__title" data-i18n="process.steps.s1.title">Choose Your Design</h3>
+            <p class="process-step__desc" data-i18n="process.steps.s1.desc">Select an existing design or request a completely individual creation.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="process-step__num">02</span>
+            <h3 class="process-step__title" data-i18n="process.steps.s2.title">Submit Your Measurements</h3>
+            <p class="process-step__desc" data-i18n="process.steps.s2.desc">Follow our measurement guide and provide your measurements online.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="process-step__num">03</span>
+            <h3 class="process-step__title" data-i18n="process.steps.s3.title">Discuss Your Design</h3>
+            <p class="process-step__desc" data-i18n="process.steps.s3.desc">We review your request and contact you to clarify the details.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="process-step__num">04</span>
+            <h3 class="process-step__title" data-i18n="process.steps.s4.title">Approve Your Price</h3>
+            <p class="process-step__desc" data-i18n="process.steps.s4.desc">You receive an individual quotation before payment.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="process-step__num">05</span>
+            <h3 class="process-step__title" data-i18n="process.steps.s5.title">Your Leotard Is Crafted</h3>
+            <p class="process-step__desc" data-i18n="process.steps.s5.desc">Production begins after full payment is confirmed.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SECTION 7 — CUSTOM ORDER FORM
+         ====================================================================== -->
+    <section class="order-section" id="custom-order" aria-labelledby="orderHeading">
+      <div class="container">
+        <div class="order-header reveal">
+          <span class="eyebrow" data-i18n="order.eyebrow">Private Atelier Request</span>
+          <h2 class="heading-lg" id="orderHeading" data-i18n="order.heading">LET'S CREATE SOMETHING UNIQUE.</h2>
+          <p data-i18n="order.subtitle">
+            Tell us about your vision. Share your measurements, preferred design, and contact details. We will personally review your request and get back to you.
+          </p>
+        </div>
+
+        <div class="atelier-form-wrapper reveal">
+          <form id="atelierOrderForm" novalidate>
+            <!-- PART I: CUSTOMER INFORMATION -->
+            <fieldset class="form-fieldset">
+              <div class="fieldset-header">
+                <legend class="fieldset-legend"><span>01 / 03</span> <span style="font-family: var(--font-serif); font-size: inherit; letter-spacing: inherit; text-transform: none; color: inherit; font-weight: inherit;" data-i18n="order.part1.title">Customer Information</span></legend>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group" id="group-fullName">
+                  <label class="form-label" for="fullName"><span data-i18n="order.part1.fullName">Full Name</span> <span class="req">*</span></label>
+                  <input class="form-input" type="text" id="fullName" name="fullName" placeholder="e.g., Elena Rostova" data-i18n-placeholder="order.part1.fullNamePlaceholder" required />
+                  <span class="error-msg" data-i18n="order.errors.fullName">Please enter your full name.</span>
+                </div>
+
+                <div class="form-group" id="group-email">
+                  <label class="form-label" for="email"><span data-i18n="order.part1.email">Email Address</span> <span class="req">*</span></label>
+                  <input class="form-input" type="email" id="email" name="email" placeholder="elena@example.com" data-i18n-placeholder="order.part1.emailPlaceholder" required />
+                  <span class="error-msg" data-i18n="order.errors.email">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-group" id="group-phone">
+                  <label class="form-label" for="phone"><span data-i18n="order.part1.phone">Phone Number</span> <span class="req">*</span></label>
+                  <input class="form-input" type="tel" id="phone" name="phone" placeholder="+1 (555) 234-5678" data-i18n-placeholder="order.part1.phonePlaceholder" required />
+                  <span class="error-msg" data-i18n="order.errors.phone">Please enter your phone number with country code.</span>
+                </div>
+
+                <div class="form-group" id="group-country">
+                  <label class="form-label" for="country"><span data-i18n="order.part1.country">Country</span> <span class="req">*</span></label>
+                  <input class="form-input" type="text" id="country" name="country" placeholder="e.g., France, United States, Italy" data-i18n-placeholder="order.part1.countryPlaceholder" required />
+                  <span class="error-msg" data-i18n="order.errors.country">Please specify your country.</span>
+                </div>
+
+                <div class="form-group form-group--full">
+                  <span class="form-label" id="contactMethodLabel" data-i18n="order.part1.contactMethod">Preferred Contact Method</span>
+                  <div class="radio-pills" role="radiogroup" aria-labelledby="contactMethodLabel">
+                    <label class="radio-pill">
+                      <input type="radio" name="contactMethod" value="WhatsApp" checked />
+                      <span>WhatsApp</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="contactMethod" value="Email" />
+                      <span data-i18n="order.part1.contactEmail">Email</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="contactMethod" value="Telegram" />
+                      <span>Telegram</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- PART II: LEOTARD INFORMATION -->
+            <fieldset class="form-fieldset">
+              <div class="fieldset-header">
+                <legend class="fieldset-legend"><span>02 / 03</span> <span style="font-family: var(--font-serif); font-size: inherit; letter-spacing: inherit; text-transform: none; color: inherit; font-weight: inherit;" data-i18n="order.part2.title">Leotard Information</span></legend>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <span class="form-label" id="categoryLabel" data-i18n="order.part2.category">Customer Category</span>
+                  <div class="radio-pills" role="radiogroup" aria-labelledby="categoryLabel">
+                    <label class="radio-pill">
+                      <input type="radio" name="customerCategory" value="Women" checked />
+                      <span data-i18n="order.part2.women">Women</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="customerCategory" value="Girls" />
+                      <span data-i18n="order.part2.girls">Girls</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <span class="form-label" id="gymTypeLabel" data-i18n="order.part2.gymType">Gymnastics Type</span>
+                  <div class="radio-pills" role="radiogroup" aria-labelledby="gymTypeLabel">
+                    <label class="radio-pill">
+                      <input type="radio" name="gymnasticsType" value="Rhythmic" checked />
+                      <span data-i18n="order.part2.rhythmic">Rhythmic</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="gymnasticsType" value="Artistic" />
+                      <span data-i18n="order.part2.artistic">Artistic</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <span class="form-label" id="purposeLabel" data-i18n="order.part2.purpose">Leotard Purpose</span>
+                  <div class="radio-pills" role="radiogroup" aria-labelledby="purposeLabel">
+                    <label class="radio-pill">
+                      <input type="radio" name="leotardPurpose" value="Training" />
+                      <span data-i18n="order.part2.training">Training</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="leotardPurpose" value="Competition" checked />
+                      <span data-i18n="order.part2.competition">Competition</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <span class="form-label" id="designPrefLabel" data-i18n="order.part2.designPref">Design Preference</span>
+                  <div class="radio-pills" role="radiogroup" aria-labelledby="designPrefLabel">
+                    <label class="radio-pill">
+                      <input type="radio" name="designPreference" value="Existing Design" />
+                      <span data-i18n="order.part2.existingDesign">Existing Design</span>
+                    </label>
+                    <label class="radio-pill">
+                      <input type="radio" name="designPreference" value="Custom Design" checked />
+                      <span data-i18n="order.part2.customDesign">Custom Design</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="preferredColors" data-i18n="order.part2.colors">Preferred Colors</label>
+                  <input class="form-input" type="text" id="preferredColors" name="preferredColors" placeholder="e.g., Deep Burgundy, Ivory, Silver accents" data-i18n-placeholder="order.part2.colorsPlaceholder" />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="competitionDate"><span data-i18n="order.part2.compDate">Competition Date</span> <span class="opt" data-i18n="order.part2.optional">(optional)</span></label>
+                  <input class="form-input" type="date" id="competitionDate" name="competitionDate" />
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- PART III: MEASUREMENTS -->
+            <fieldset class="form-fieldset">
+              <div class="fieldset-header">
+                <legend class="fieldset-legend"><span>03 / 03</span> <span style="font-family: var(--font-serif); font-size: inherit; letter-spacing: inherit; text-transform: none; color: inherit; font-weight: inherit;" data-i18n="order.part3.title">Measurements</span></legend>
+                <button type="button" class="guide-trigger" id="openMeasurementGuide" data-i18n="order.part3.guideTrigger">View Atelier Measurement Guide</button>
+              </div>
+
+              <div class="form-grid form-grid--3">
+                <div class="form-group">
+                  <label class="form-label" for="height" data-i18n="order.part3.height">Height (cm)</label>
+                  <input class="form-input" type="number" id="height" name="height" min="80" max="220" step="0.5" placeholder="e.g., 168" data-i18n-placeholder="order.part3.heightPlaceholder" />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="chest" data-i18n="order.part3.chest">Chest Circumference (cm)</label>
+                  <input class="form-input" type="number" id="chest" name="chest" min="40" max="150" step="0.5" placeholder="e.g., 84" data-i18n-placeholder="order.part3.chestPlaceholder" />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="waist" data-i18n="order.part3.waist">Waist Circumference (cm)</label>
+                  <input class="form-input" type="number" id="waist" name="waist" min="35" max="140" step="0.5" placeholder="e.g., 64" data-i18n-placeholder="order.part3.waistPlaceholder" />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="hip" data-i18n="order.part3.hip">Hip Circumference (cm)</label>
+                  <input class="form-input" type="number" id="hip" name="hip" min="40" max="160" step="0.5" placeholder="e.g., 90" data-i18n-placeholder="order.part3.hipPlaceholder" />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="torsoGirth" data-i18n="order.part3.torso">Torso Girth (cm)</label>
+                  <input class="form-input" type="number" id="torsoGirth" name="torsoGirth" min="80" max="200" step="0.5" placeholder="e.g., 146" data-i18n-placeholder="order.part3.torsoPlaceholder" />
+                </div>
+
+                <div class="form-group form-group--full">
+                  <label class="form-label" for="comments" data-i18n="order.part3.comments">Additional Comments</label>
+                  <textarea class="form-textarea" id="comments" name="comments" placeholder="Share details about your routine music, sleeve preferences, crystal intensity, or any fitting notes..." data-i18n-placeholder="order.part3.commentsPlaceholder"></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-submit-bar">
+              <p class="form-note" data-i18n="order.submitNote">
+                No payment is required at this stage. Our atelier director will review your dossier and send an individual design consultation and quotation.
+              </p>
+              <button type="submit" class="btn btn--primary" data-i18n="order.submitCta">Submit Design Request</button>
+            </div>
+          </form>
+
+          <!-- Confirmation Dossier (Displayed upon valid submission) -->
+          <div class="order-confirmation" id="orderConfirmation" role="status" aria-live="polite">
+            <span class="eyebrow eyebrow--light" data-i18n="order.confirmation.eyebrow">Dossier Received</span>
+            <h3 class="heading-md" style="margin-top: 0.85rem; color: var(--color-ivory);" data-i18n="order.confirmation.title">Thank you. Your custom design request has been registered with VELORA.</h3>
+            <p style="margin-top: 0.75rem; color: var(--color-silver); font-size: 0.92rem;" data-i18n="order.confirmation.text">
+              Our atelier team will review your silhouette preferences and measurements, then reach out personally via your preferred contact method to discuss your design and prepare an individual quotation.
+            </p>
+            <div class="dossier-summary" id="dossierSummary"></div>
+            <button type="button" class="btn btn--outline-light btn--sm" id="resetOrderForm" data-i18n="order.confirmation.resetCta">Submit Another Request</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       SECTION 8 — FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo">
+            <span class="brand-logo__main">VELORA</span>
+            <span class="brand-logo__sub" data-i18n="brand.subtitle">Gymnastics Atelier</span>
+          </a>
+          <p data-i18n="footer.about">
+            Where Elegance Meets Performance. Individually crafted rhythmic and artistic gymnastics leotards created with haute couture discipline and personal care.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="footer-heading" data-i18n="footer.navHeading">Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="#home" data-i18n="nav.home">Home</a></li>
+            <li><a href="#women-collection" data-i18n="nav.women">Women</a></li>
+            <li><a href="#girls-collection" data-i18n="nav.girls">Girls</a></li>
+            <li><a href="#featured-designs" data-i18n="nav.customDesign">Custom Design</a></li>
+            <li><a href="#about" data-i18n="footer.aboutLink">About the Atelier</a></li>
+            <li><a href="#custom-order" data-i18n="nav.cta">Request Your Design</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-heading" data-i18n="footer.conciergeHeading">Atelier Concierge</h3>
+          <ul class="footer-contact-list">
+            <li data-i18n="footer.shipping">Private Consultations &amp; Worldwide Shipping</li>
+            <li>Email: atelier@veloragymnastics.com</li>
+            <li data-i18n="footer.messengers">WhatsApp / Telegram: Available upon request</li>
+            <li data-i18n="footer.hours">Hours: Monday &ndash; Saturday, 10:00 &ndash; 19:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="currentYear"></span> VELORA &mdash; <span data-i18n="brand.subtitleUpper">GYMNASTICS ATELIER</span>. <span data-i18n="footer.rights">All Rights Reserved.</span></span>
+        <span data-i18n="footer.tagline">Bespoke Couture Craftsmanship</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       ATELIER MEASUREMENT GUIDE MODAL
+       ======================================================================== -->
+  <div class="modal-backdrop" id="measurementModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow" data-i18n="guide.eyebrow">Atelier Fitting Guide</span>
+          <h3 class="heading-md" id="modalTitle" style="margin-top: 0.45rem;" data-i18n="guide.title">How to Take Your Measurements</h3>
+        </div>
+        <button type="button" class="modal-close" id="closeMeasurementGuide" aria-label="Close Measurement Guide" data-i18n="guide.close">Close &times;</button>
+      </div>
+
+      <div class="guide-layout">
+        <div class="guide-diagram">
+          <svg width="240" height="320" viewBox="0 0 240 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomical measurement reference diagram">
+            <!-- Minimalist Figure Outline -->
+            <circle cx="120" cy="34" r="16" stroke="#F3F0ED" stroke-width="1" />
+            <path d="M88 66C102 74 138 74 152 66L172 150L162 152L146 92L140 132C136 148 142 172 148 192L134 292H124L120 202L116 292H106L92 192C98 172 104 148 100 132L94 92L78 152L68 150L88 66Z" stroke="#F3F0ED" stroke-width="1" />
+            <!-- Chest Line -->
+            <line x1="86" y1="104" x2="154" y2="104" stroke="#D7BFC5" stroke-width="1.2" />
+            <text x="160" y="107" fill="#D7BFC5" font-size="8.5" font-family="Montserrat, sans-serif" data-i18n-svg="guide.svg.chest">CHEST</text>
+            <!-- Waist Line -->
+            <line x1="92" y1="136" x2="148" y2="136" stroke="#D7BFC5" stroke-width="1.2" />
+            <text x="156" y="139" fill="#D7BFC5" font-size="8.5" font-family="Montserrat, sans-serif" data-i18n-svg="guide.svg.waist">WAIST</text>
+            <!-- Hip Line -->
+            <line x1="84" y1="176" x2="156" y2="176" stroke="#D7BFC5" stroke-width="1.2" />
+            <text x="162" y="179" fill="#D7BFC5" font-size="8.5" font-family="Montserrat, sans-serif" data-i18n-svg="guide.svg.hip">HIP</text>
+            <!-- Torso Girth Loop -->
+            <path d="M106 66C112 115 114 162 120 198C126 162 128 115 134 66" stroke="#521C2D" stroke-width="1.6" stroke-dasharray="3 3" />
+            <text x="14" y="124" fill="#B8B7BE" font-size="8.5" font-family="Montserrat, sans-serif" data-i18n-svg="guide.svg.torso">TORSO GIRTH</text>
+          </svg>
+        </div>
+
+        <div class="guide-steps">
+          <div class="guide-step">
+            <strong data-i18n="guide.steps.s1.title">01. Height</strong>
+            <p data-i18n="guide.steps.s1.desc">Stand barefoot straight against a wall and measure from the crown of the head to the floor.</p>
+          </div>
+          <div class="guide-step">
+            <strong data-i18n="guide.steps.s2.title">02. Chest Circumference</strong>
+            <p data-i18n="guide.steps.s2.desc">Measure horizontally around the fullest part of the chest with arms relaxed at the sides.</p>
+          </div>
+          <div class="guide-step">
+            <strong data-i18n="guide.steps.s3.title">03. Waist Circumference</strong>
+            <p data-i18n="guide.steps.s3.desc">Measure around the narrowest natural waistline, keeping the tape snug without compressing.</p>
+          </div>
+          <div class="guide-step">
+            <strong data-i18n="guide.steps.s4.title">04. Hip Circumference</strong>
+            <p data-i18n="guide.steps.s4.desc">Measure horizontally around the fullest part of the hips and seat.</p>
+          </div>
+          <div class="guide-step">
+            <strong data-i18n="guide.steps.s5.title">05. Torso Girth (Essential)</strong>
+            <p data-i18n="guide.steps.s5.desc">Start at the center of one shoulder, pass the tape down the front through the legs, and return up the back to the starting shoulder point.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       VANILLA JAVASCRIPT — I18N, INTERACTIONS, FILTERING & FORM HANDLING
+       ======================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // 0. Bilingual Dictionary (EN / RU)
+      const TRANSLATIONS = {
+        en: {
+          pageTitle: 'VELORA — Gymnastics Atelier | Where Elegance Meets Performance',
+          brand: {
+            subtitle: 'Gymnastics Atelier',
+            subtitleUpper: 'GYMNASTICS ATELIER',
+          },
+          nav: {
+            home: 'Home',
+            women: 'Women',
+            girls: 'Girls',
+            customDesign: 'Custom Design',
+            about: 'About',
+            contact: 'Contact',
+            cta: 'Request Your Design',
+            languageLabel: 'Language',
+          },
+          hero: {
+            eyebrow: 'Bespoke Couture Atelier',
+            slogan: 'Where Elegance Meets Performance.',
+            description: 'Individually crafted gymnastics leotards designed to celebrate movement, elegance, and individuality.',
+            primaryCta: 'Create Your Leotard',
+            secondaryCta: 'Explore Collection',
+            plateMeta: 'PLATE 01 — CAMPAIGN EDITORIAL',
+            plateCaptionLeft: '[ EDITORIAL PHOTOGRAPHY PLACEHOLDER ]',
+            plateCaptionRight: 'REPLACEABLE HERO LOOKBOOK',
+          },
+          collections: {
+            eyebrow: 'Atelier Lines',
+            heading: 'Tailored for Every Stage of Movement.',
+            plateType: 'EDITORIAL PORTRAIT',
+            plateReplaceable: 'REPLACEABLE IMAGE',
+            cta: 'Explore Collection',
+            women: {
+              plateMeta: 'LINE I — WOMEN',
+              plateCaption: '[ WOMEN EDITORIAL PLACEHOLDER ]',
+              index: 'Collection I',
+              title: 'WOMEN',
+              text: 'Elegant gymnastics leotards created for women who express strength and artistry through movement.',
+            },
+            girls: {
+              plateMeta: 'LINE II — GIRLS',
+              plateCaption: '[ GIRLS EDITORIAL PLACEHOLDER ]',
+              index: 'Collection II',
+              title: 'GIRLS',
+              text: 'Beautifully tailored gymnastics leotards created with attention to comfort, fit, and individuality.',
+            },
+          },
+          featured: {
+            eyebrow: 'Atelier Archive & Silhouettes',
+            heading: 'Featured Designs.',
+            intro: 'Each silhouette serves as an artistic foundation. Every commission is individually proportioned, colored, and embellished to order.',
+            samplePlaceholder: 'SAMPLE PLACEHOLDER',
+            bespokeSketch: 'BESPOKE SKETCH',
+            madeToOrder: 'Made to Order',
+            oneOfOne: 'One-of-One',
+            oneOfOneUpper: 'ONE-OF-ONE',
+            inquireCta: 'Inquire →',
+            commissionCta: 'Commission →',
+            filters: {
+              all: 'All Silhouettes',
+              competition: 'Competition Leotards',
+              training: 'Training Leotards',
+              rhythmic: 'Rhythmic Gymnastics',
+              artistic: 'Artistic Gymnastics',
+              custom: 'Custom Designs',
+            },
+            cards: {
+              c1: {
+                study: 'STUDY NO. 01',
+                plate: '[ DESIGN PLACEHOLDER 01 ]',
+                category: 'Competition Leotards',
+                title: 'Nocturne Couture',
+                desc: 'Sculpted long-sleeve competition silhouette featuring hand-placed crystal gradations and sheer illusion mesh paneling.',
+                prefillNote: 'Inquiry regarding Silhouette 01: Nocturne Couture',
+              },
+              c2: {
+                study: 'STUDY NO. 02',
+                plate: '[ DESIGN PLACEHOLDER 02 ]',
+                category: 'Training Leotards',
+                title: 'Studio Architectural',
+                desc: 'Refined sleeveless training piece engineered in breathable Italian matte microfiber with velvet seam piping for daily grace.',
+                prefillNote: 'Inquiry regarding Silhouette 02: Studio Architectural',
+              },
+              c3: {
+                study: 'STUDY NO. 03',
+                plate: '[ DESIGN PLACEHOLDER 03 ]',
+                category: 'Rhythmic Gymnastics',
+                title: 'Arabesque Drape',
+                desc: 'Fluid asymmetrical skirted construction designed to amplify apparatus choreography, turns, and expressive extension.',
+                prefillNote: 'Inquiry regarding Silhouette 03: Arabesque Drape',
+              },
+              c4: {
+                study: 'STUDY NO. 04',
+                plate: '[ DESIGN PLACEHOLDER 04 ]',
+                category: 'Artistic Gymnastics',
+                title: 'Sovereign Chevron',
+                desc: 'Precision-engineered bodice with sculptural velvet V-paneling and secure four-way stretch support for dynamic floor and apparatus routines.',
+                prefillNote: 'Inquiry regarding Silhouette 04: Sovereign Chevron',
+              },
+              c5: {
+                study: 'STUDY NO. 05',
+                plate: '[ BESPOKE COMMISSION PLATE ]',
+                category: 'Custom Designs',
+                title: 'Bespoke Atelier Commission',
+                desc: 'An original one-of-one creation sketched exclusively around your music, routine theme, and personal palette.',
+                prefillNote: 'Requesting a completely custom one-of-one design',
+              },
+              c6: {
+                study: 'STUDY NO. 06',
+                plate: '[ DESIGN PLACEHOLDER 06 ]',
+                category: 'Custom Designs',
+                title: 'Rosé Velvet Edition',
+                desc: 'Soft dusty rose silk-velvet paneling paired with tonal embroidery, customizable in sleeve length and neckline cut.',
+                prefillNote: 'Inquiry regarding Silhouette 06: Rosé Velvet Edition',
+              },
+            },
+          },
+          craft: {
+            plateMetaLeft: 'ATELIER SAVOIR-FAIRE',
+            plateMetaRight: 'BESPOKE PATTERNING',
+            plateCaptionLeft: '[ ATELIER CRAFTSMANSHIP PLACEHOLDER ]',
+            plateCaptionRight: 'HANDCRAFTED TO MEASURE',
+            eyebrow: 'The Art of Custom Tailoring',
+            heading: 'MADE TO REFLECT YOUR MOVEMENT.',
+            lead: '“Every VELORA leotard is created with individuality in mind. From the first design idea to the final handcrafted detail, each piece is tailored to reflect the athlete\'s personality, style, and movement.”',
+            pillars: {
+              p1: {
+                title: 'Individual design',
+                sub: 'Original artistic compositions conceived around your routine, music, and presence.',
+              },
+              p2: {
+                title: 'Tailored measurements',
+                sub: 'Drafted exclusively to your exact anatomical proportions for second-skin security.',
+              },
+              p3: {
+                title: 'Handcrafted details',
+                sub: 'Meticulous hand-appliqué, couture seam finishing, and precision crystal placement.',
+              },
+              p4: {
+                title: 'Thoughtful material selection',
+                sub: 'European stretch velvets, breathable Italian lycra, and translucent illusion meshes.',
+              },
+              p5: {
+                title: 'Personal communication',
+                sub: 'Direct, attentive consultation with our atelier from initial sketch through final fitting.',
+              },
+            },
+          },
+          process: {
+            eyebrow: 'Atelier Commission Process',
+            heading: 'How to Order.',
+            steps: {
+              s1: {
+                title: 'Choose Your Design',
+                desc: 'Select an existing design or request a completely individual creation.',
+              },
+              s2: {
+                title: 'Submit Your Measurements',
+                desc: 'Follow our measurement guide and provide your measurements online.',
+              },
+              s3: {
+                title: 'Discuss Your Design',
+                desc: 'We review your request and contact you to clarify the details.',
+              },
+              s4: {
+                title: 'Approve Your Price',
+                desc: 'You receive an individual quotation before payment.',
+              },
+              s5: {
+                title: 'Your Leotard Is Crafted',
+                desc: 'Production begins after full payment is confirmed.',
+              },
+            },
+          },
+          order: {
+            eyebrow: 'Private Atelier Request',
+            heading: "LET'S CREATE SOMETHING UNIQUE.",
+            subtitle: 'Tell us about your vision. Share your measurements, preferred design, and contact details. We will personally review your request and get back to you.',
+            part1: {
+              title: 'Customer Information',
+              fullName: 'Full Name',
+              fullNamePlaceholder: 'e.g., Elena Rostova',
+              email: 'Email Address',
+              emailPlaceholder: 'elena@example.com',
+              phone: 'Phone Number',
+              phonePlaceholder: '+1 (555) 234-5678',
+              country: 'Country',
+              countryPlaceholder: 'e.g., France, United States, Italy',
+              contactMethod: 'Preferred Contact Method',
+              contactEmail: 'Email',
+            },
+            part2: {
+              title: 'Leotard Information',
+              category: 'Customer Category',
+              women: 'Women',
+              girls: 'Girls',
+              gymType: 'Gymnastics Type',
+              rhythmic: 'Rhythmic',
+              artistic: 'Artistic',
+              purpose: 'Leotard Purpose',
+              training: 'Training',
+              competition: 'Competition',
+              designPref: 'Design Preference',
+              existingDesign: 'Existing Design',
+              customDesign: 'Custom Design',
+              colors: 'Preferred Colors',
+              colorsPlaceholder: 'e.g., Deep Burgundy, Ivory, Silver accents',
+              compDate: 'Competition Date',
+              optional: '(optional)',
+            },
+            part3: {
+              title: 'Measurements',
+              guideTrigger: 'View Atelier Measurement Guide',
+              height: 'Height (cm)',
+              heightPlaceholder: 'e.g., 168',
+              chest: 'Chest Circumference (cm)',
+              chestPlaceholder: 'e.g., 84',
+              waist: 'Waist Circumference (cm)',
+              waistPlaceholder: 'e.g., 64',
+              hip: 'Hip Circumference (cm)',
+              hipPlaceholder: 'e.g., 90',
+              torso: 'Torso Girth (cm)',
+              torsoPlaceholder: 'e.g., 146',
+              comments: 'Additional Comments',
+              commentsPlaceholder: 'Share details about your routine music, sleeve preferences, crystal intensity, or any fitting notes...',
+            },
+            errors: {
+              fullName: 'Please enter your full name.',
+              email: 'Please enter a valid email address.',
+              phone: 'Please enter your phone number with country code.',
+              country: 'Please specify your country.',
+            },
+            submitNote: 'No payment is required at this stage. Our atelier director will review your dossier and send an individual design consultation and quotation.',
+            submitCta: 'Submit Design Request',
+            confirmation: {
+              eyebrow: 'Dossier Received',
+              title: 'Thank you. Your custom design request has been registered with VELORA.',
+              text: 'Our atelier team will review your silhouette preferences and measurements, then reach out personally via your preferred contact method to discuss your design and prepare an individual quotation.',
+              resetCta: 'Submit Another Request',
+            },
+            dossier: {
+              client: 'Client',
+              preferredContact: 'Preferred Contact',
+              commissionLine: 'Commission Line',
+              designDirection: 'Design Direction',
+              preferredPalette: 'Preferred Palette',
+              competitionDate: 'Competition Date',
+              submittedMeasurements: 'Submitted Measurements',
+              notSpecified: 'Not specified',
+              flexibleDate: 'Flexible / Not set',
+              consultMeasurements: 'To be provided during consultation',
+              units: {
+                height: 'Height',
+                chest: 'Chest',
+                waist: 'Waist',
+                hip: 'Hip',
+                torso: 'Torso Girth',
+                cm: 'cm',
+              },
+              values: {
+                Women: 'Women',
+                Girls: 'Girls',
+                Rhythmic: 'Rhythmic',
+                Artistic: 'Artistic',
+                Training: 'Training',
+                Competition: 'Competition',
+                'Existing Design': 'Existing Design',
+                'Custom Design': 'Custom Design',
+                WhatsApp: 'WhatsApp',
+                Email: 'Email',
+                Telegram: 'Telegram',
+              },
+            },
+          },
+          footer: {
+            about: 'Where Elegance Meets Performance. Individually crafted rhythmic and artistic gymnastics leotards created with haute couture discipline and personal care.',
+            navHeading: 'Navigation',
+            aboutLink: 'About the Atelier',
+            conciergeHeading: 'Atelier Concierge',
+            shipping: 'Private Consultations & Worldwide Shipping',
+            messengers: 'WhatsApp / Telegram: Available upon request',
+            hours: 'Hours: Monday – Saturday, 10:00 – 19:00',
+            rights: 'All Rights Reserved.',
+            tagline: 'Bespoke Couture Craftsmanship',
+          },
+          guide: {
+            eyebrow: 'Atelier Fitting Guide',
+            title: 'How to Take Your Measurements',
+            close: 'Close ×',
+            svg: {
+              chest: 'CHEST',
+              waist: 'WAIST',
+              hip: 'HIP',
+              torso: 'TORSO GIRTH',
+            },
+            steps: {
+              s1: {
+                title: '01. Height',
+                desc: 'Stand barefoot straight against a wall and measure from the crown of the head to the floor.',
+              },
+              s2: {
+                title: '02. Chest Circumference',
+                desc: 'Measure horizontally around the fullest part of the chest with arms relaxed at the sides.',
+              },
+              s3: {
+                title: '03. Waist Circumference',
+                desc: 'Measure around the narrowest natural waistline, keeping the tape snug without compressing.',
+              },
+              s4: {
+                title: '04. Hip Circumference',
+                desc: 'Measure horizontally around the fullest part of the hips and seat.',
+              },
+              s5: {
+                title: '05. Torso Girth (Essential)',
+                desc: 'Start at the center of one shoulder, pass the tape down the front through the legs, and return up the back to the starting shoulder point.',
+              },
+            },
+          },
+        },
+        ru: {
+          pageTitle: 'VELORA — Ателье гимнастических купальников | Где элегантность встречается с мастерством',
+          brand: {
+            subtitle: 'Ателье гимнастических купальников',
+            subtitleUpper: 'АТЕЛЬЕ ГИМНАСТИЧЕСКИХ КУПАЛЬНИКОВ',
+          },
+          nav: {
+            home: 'Главная',
+            women: 'Женщины',
+            girls: 'Девочки',
+            customDesign: 'Индивидуальный дизайн',
+            about: 'Об ателье',
+            contact: 'Контакты',
+            cta: 'Заказать дизайн',
+            languageLabel: 'Язык',
+          },
+          hero: {
+            eyebrow: 'Ателье высокой моды',
+            slogan: 'Где элегантность встречается с мастерством.',
+            description: 'Индивидуально созданные гимнастические купальники, призванные воспевать пластику движения, утончённость и неповторимую индивидуальность.',
+            primaryCta: 'Создать купальник',
+            secondaryCta: 'Смотреть коллекцию',
+            plateMeta: 'КАДР 01 — КАМПЕЙН АТЕЛЬЕ',
+            plateCaptionLeft: '[ МЕСТО ДЛЯ РЕДАКЦИОННОЙ ФОТОГРАФИИ ]',
+            plateCaptionRight: 'СМЕННЫЙ ЛУКБУК КАМПЕЙНА',
+          },
+          collections: {
+            eyebrow: 'Линии ателье',
+            heading: 'Создано для каждого этапа движения.',
+            plateType: 'ЭДИТОРИАЛ ПОРТРЕТ',
+            plateReplaceable: 'СМЕННОЕ ИЗОБРАЖЕНИЕ',
+            cta: 'Смотреть коллекцию',
+            women: {
+              plateMeta: 'ЛИНИЯ I — ЖЕНЩИНЫ',
+              plateCaption: '[ ФОТО-ПЛЕЙСХОЛДЕР: ЖЕНСКАЯ ЛИНИЯ ]',
+              index: 'Коллекция I',
+              title: 'ЖЕНЩИНЫ',
+              text: 'Элегантные гимнастические купальники, созданные для женщин, раскрывающих силу и артистизм через движение.',
+            },
+            girls: {
+              plateMeta: 'ЛИНИЯ II — ДЕВОЧКИ',
+              plateCaption: '[ ФОТО-ПЛЕЙСХОЛДЕР: ЛИНИЯ ДЛЯ ДЕВОЧЕК ]',
+              index: 'Коллекция II',
+              title: 'ДЕВОЧКИ',
+              text: 'Безупречно скроенные гимнастические купальники, созданные с особым вниманием к комфорту, посадке и индивидуальности.',
+            },
+          },
+          featured: {
+            eyebrow: 'Архив и силуэты ателье',
+            heading: 'Избранные модели.',
+            intro: 'Каждый силуэт служит художественной основой. Любой заказ строится по индивидуальным меркам, колористике и декору.',
+            samplePlaceholder: 'ОБРАЗЕЦ СИЛУЭТА',
+            bespokeSketch: 'ИНДИВИДУАЛЬНЫЙ ЭСКИЗ',
+            madeToOrder: 'На заказ',
+            oneOfOne: 'В единственном экземпляре',
+            oneOfOneUpper: 'ЕДИНСТВЕННЫЙ ЭКЗЕМПЛЯР',
+            inquireCta: 'Запросить →',
+            commissionCta: 'Заказать →',
+            filters: {
+              all: 'Все силуэты',
+              competition: 'Соревновательные купальники',
+              training: 'Тренировочные купальники',
+              rhythmic: 'Художественная гимнастика',
+              artistic: 'Спортивная гимнастика',
+              custom: 'Индивидуальный дизайн',
+            },
+            cards: {
+              c1: {
+                study: 'ЭТЮД № 01',
+                plate: '[ ПЛЕЙСХОЛДЕР МОДЕЛИ 01 ]',
+                category: 'Соревновательные купальники',
+                title: 'Nocturne Couture',
+                desc: 'Скульптурный соревновательный силуэт с длинным рукавом, ручной градацией кристаллов и вставками из тончайшей сетки.',
+                prefillNote: 'Запрос по силуэту 01: Nocturne Couture',
+              },
+              c2: {
+                study: 'ЭТЮД № 02',
+                plate: '[ ПЛЕЙСХОЛДЕР МОДЕЛИ 02 ]',
+                category: 'Тренировочные купальники',
+                title: 'Studio Architectural',
+                desc: 'Лаконичная модель без рукавов из дышащей итальянской матовой микрофибры с бархатной окантовкой швов для ежедневной грации.',
+                prefillNote: 'Запрос по силуэту 02: Studio Architectural',
+              },
+              c3: {
+                study: 'ЭТЮД № 03',
+                plate: '[ ПЛЕЙСХОЛДЕР МОДЕЛИ 03 ]',
+                category: 'Художественная гимнастика',
+                title: 'Arabesque Drape',
+                desc: 'Струящаяся асимметричная юбка, созданная для выразительной работы с предметом, вращений и амплитудных линий.',
+                prefillNote: 'Запрос по силуэту 03: Arabesque Drape',
+              },
+              c4: {
+                study: 'ЭТЮД № 04',
+                plate: '[ ПЛЕЙСХОЛДЕР МОДЕЛИ 04 ]',
+                category: 'Спортивная гимнастика',
+                title: 'Sovereign Chevron',
+                desc: 'Выверенный крой лифа со скульптурными бархатными V-вставками и надёжной поддержкой в четырёх направлениях для динамичных выступлений.',
+                prefillNote: 'Запрос по силуэту 04: Sovereign Chevron',
+              },
+              c5: {
+                study: 'ЭТЮД № 05',
+                plate: '[ ИНДИВИДУАЛЬНЫЙ ЗАКАЗ АТЕЛЬЕ ]',
+                category: 'Индивидуальный дизайн',
+                title: 'Bespoke Atelier Commission',
+                desc: 'Уникальное творение в единственном экземпляре, созданное по эскизу специально под вашу музыку, образ программы и палитру.',
+                prefillNote: 'Запрос на разработку полностью индивидуального дизайна',
+              },
+              c6: {
+                study: 'ЭТЮД № 06',
+                plate: '[ ПЛЕЙСХОЛДЕР МОДЕЛИ 06 ]',
+                category: 'Индивидуальный дизайн',
+                title: 'Rosé Velvet Edition',
+                desc: 'Нежные вставки из шёлкового бархата оттенка пыльной розы с тональной вышивкой, возможностью выбора длины рукава и линии выреза.',
+                prefillNote: 'Запрос по силуэту 06: Rosé Velvet Edition',
+              },
+            },
+          },
+          craft: {
+            plateMetaLeft: 'ИСКУССТВО АТЕЛЬЕ',
+            plateMetaRight: 'ИНДИВИДУАЛЬНЫЕ ЛЕКАЛА',
+            plateCaptionLeft: '[ ПЛЕЙСХОЛДЕР МАСТЕРСКОЙ АТЕЛЬЕ ]',
+            plateCaptionRight: 'РУЧНОЙ ПОШИВ ПО МЕРКАМ',
+            eyebrow: 'Искусство индивидуального пошива',
+            heading: 'СОЗДАНО, ЧТОБЫ ОТРАЖАТЬ ВАШЕ ДВИЖЕНИЕ.',
+            lead: '«Каждый купальник VELORA создаётся с мыслью об индивидуальности. От первого эскиза до финального стежка ручной работы каждое изделие призвано отражать характер, стиль и пластику спортсменки».',
+            pillars: {
+              p1: {
+                title: 'Индивидуальный дизайн',
+                sub: 'Авторские художественные композиции, задуманные в гармонии с вашей программой, музыкой и образом.',
+              },
+              p2: {
+                title: 'Индивидуальные мерки',
+                sub: 'Построение лекал строго по вашим анатомическим параметрам для безупречной посадки как вторая кожа.',
+              },
+              p3: {
+                title: 'Детали ручной работы',
+                sub: 'Ювелирная ручная аппликация, кутюрная обработка швов и точечная инкрустация кристаллами.',
+              },
+              p4: {
+                title: 'Тщательный подбор материалов',
+                sub: 'Европейский эластичный бархат, дышащая итальянская лайкра и невесомая прозрачная сетка.',
+              },
+              p5: {
+                title: 'Личное сопровождение',
+                sub: 'Внимательный прямой диалог с мастерами ателье от утверждения эскиза до финальной готовности.',
+              },
+            },
+          },
+          process: {
+            eyebrow: 'Этапы работы с ателье',
+            heading: 'Как оформить заказ.',
+            steps: {
+              s1: {
+                title: 'Выберите дизайн',
+                desc: 'Выберите модель из коллекции или закажите разработку полностью индивидуального образа.',
+              },
+              s2: {
+                title: 'Передайте мерки',
+                desc: 'Воспользуйтесь нашим руководством по снятию мерок и заполните параметры онлайн.',
+              },
+              s3: {
+                title: 'Обсудите детали',
+                desc: 'Мы изучим вашу заявку и свяжемся с вами для уточнения всех художественных нюансов.',
+              },
+              s4: {
+                title: 'Утвердите стоимость',
+                desc: 'Вы получите персональный расчёт стоимости до внесения оплаты.',
+              },
+              s5: {
+                title: 'Создание купальника',
+                desc: 'Пошив и ручная отделка начинаются после подтверждения полной оплаты.',
+              },
+            },
+          },
+          order: {
+            eyebrow: 'Персональная заявка в ателье',
+            heading: 'СОЗДАДИМ НЕЧТО УНИКАЛЬНОЕ.',
+            subtitle: 'Расскажите о вашем замысле. Укажите мерки, предпочтительный дизайн и контактные данные. Мы лично изучим вашу заявку и свяжемся с вами.',
+            part1: {
+              title: 'Информация о заказчике',
+              fullName: 'Имя и фамилия',
+              fullNamePlaceholder: 'например, Елена Ростова',
+              email: 'Электронная почта',
+              emailPlaceholder: 'elena@example.com',
+              phone: 'Номер телефона',
+              phonePlaceholder: '+7 (700) 234-56-78',
+              country: 'Страна',
+              countryPlaceholder: 'например, Казахстан, Россия, Франция',
+              contactMethod: 'Предпочтительный способ связи',
+              contactEmail: 'Email',
+            },
+            part2: {
+              title: 'Информация о купальнике',
+              category: 'Категория',
+              women: 'Женщины',
+              girls: 'Девочки',
+              gymType: 'Вид гимнастики',
+              rhythmic: 'Художественная',
+              artistic: 'Спортивная',
+              purpose: 'Назначение купальника',
+              training: 'Тренировочный',
+              competition: 'Соревновательный',
+              designPref: 'Предпочтение по дизайну',
+              existingDesign: 'Существующий дизайн',
+              customDesign: 'Индивидуальный дизайн',
+              colors: 'Предпочитаемые цвета',
+              colorsPlaceholder: 'например, глубокий бордовый, айвори, серебряные акценты',
+              compDate: 'Дата соревнований',
+              optional: '(необязательно)',
+            },
+            part3: {
+              title: 'Мерки',
+              guideTrigger: 'Открыть руководство по снятию мерок',
+              height: 'Рост (см)',
+              heightPlaceholder: 'например, 168',
+              chest: 'Обхват груди (см)',
+              chestPlaceholder: 'например, 84',
+              waist: 'Обхват талии (см)',
+              waistPlaceholder: 'например, 64',
+              hip: 'Обхват бёдер (см)',
+              hipPlaceholder: 'например, 90',
+              torso: 'Дуга туловища / торс (см)',
+              torsoPlaceholder: 'например, 146',
+              comments: 'Дополнительные пожелания',
+              commentsPlaceholder: 'Расскажите о музыке программы, желаемой длине рукава, насыщенности стразами или особенностях посадки...',
+            },
+            errors: {
+              fullName: 'Пожалуйста, укажите ваше имя и фамилию.',
+              email: 'Пожалуйста, введите корректный адрес электронной почты.',
+              phone: 'Пожалуйста, укажите номер телефона с кодом страны.',
+              country: 'Пожалуйста, укажите вашу страну.',
+            },
+            submitNote: 'На данном этапе оплата не требуется. Арт-директор ателье изучит ваше досье, проведёт консультацию и подготовит индивидуальный расчёт.',
+            submitCta: 'Отправить заявку на дизайн',
+            confirmation: {
+              eyebrow: 'Досье принято',
+              title: 'Благодарим вас. Ваша заявка на индивидуальный дизайн зарегистрирована в ателье VELORA.',
+              text: 'Команда ателье изучит ваши пожелания по силуэту и мерки, после чего лично свяжется с вами выбранным способом для обсуждения деталей и подготовки индивидуального расчёта.',
+              resetCta: 'Отправить ещё одну заявку',
+            },
+            dossier: {
+              client: 'Заказчик',
+              preferredContact: 'Предпочтительная связь',
+              commissionLine: 'Направление заказа',
+              designDirection: 'Формат дизайна',
+              preferredPalette: 'Предпочитаемая палитра',
+              competitionDate: 'Дата соревнований',
+              submittedMeasurements: 'Указанные мерки',
+              notSpecified: 'Не указано',
+              flexibleDate: 'Гибкая / не указана',
+              consultMeasurements: 'Будут уточнены на консультации',
+              units: {
+                height: 'Рост',
+                chest: 'Грудь',
+                waist: 'Талия',
+                hip: 'Бёдра',
+                torso: 'Дуга туловища',
+                cm: 'см',
+              },
+              values: {
+                Women: 'Женщины',
+                Girls: 'Девочки',
+                Rhythmic: 'Художественная гимнастика',
+                Artistic: 'Спортивная гимнастика',
+                Training: 'Тренировочный',
+                Competition: 'Соревновательный',
+                'Existing Design': 'Существующий дизайн',
+                'Custom Design': 'Индивидуальный дизайн',
+                WhatsApp: 'WhatsApp',
+                Email: 'Email',
+                Telegram: 'Telegram',
+              },
+            },
+          },
+          footer: {
+            about: 'Где элегантность встречается с мастерством. Индивидуально созданные купальники для художественной и спортивной гимнастики с дисциплиной высокой моды и бережным вниманием к каждой детали.',
+            navHeading: 'Навигация',
+            aboutLink: 'Об ателье',
+            conciergeHeading: 'Консьерж-сервис ателье',
+            shipping: 'Персональные консультации и доставка по всему миру',
+            messengers: 'WhatsApp / Telegram: По запросу',
+            hours: 'Часы работы: Понедельник – Суббота, 10:00 – 19:00',
+            rights: 'Все права защищены.',
+            tagline: 'Искусство индивидуального кутюрного пошива',
+          },
+          guide: {
+            eyebrow: 'Руководство ателье по посадке',
+            title: 'Как правильно снять мерки',
+            close: 'Закрыть ×',
+            svg: {
+              chest: 'ГРУДЬ',
+              waist: 'ТАЛИЯ',
+              hip: 'БЁДРА',
+              torso: 'ДУГА ТОРСА',
+            },
+            steps: {
+              s1: {
+                title: '01. Рост',
+                desc: 'Встаньте босиком ровно у стены и измерьте расстояние от макушки до пола.',
+              },
+              s2: {
+                title: '02. Обхват груди',
+                desc: 'Измерьте горизонтально по наиболее выступающим точкам груди при свободно опущенных руках.',
+              },
+              s3: {
+                title: '03. Обхват талии',
+                desc: 'Измерьте по самой узкой естественной линии талии, располагая сантиметровую ленту плотно, но без утяжки.',
+              },
+              s4: {
+                title: '04. Обхват бёдер',
+                desc: 'Измерьте горизонтально по наиболее выступающим точкам бёдер и ягодиц.',
+              },
+              s5: {
+                title: '05. Дуга туловища / торс (Ключевая мерка)',
+                desc: 'Начните от середины плеча, проведите ленту спереди вниз между ног и верните вверх по спине к исходной точке на плече.',
+              },
+            },
+          },
+        },
+      };
+
+      const STORAGE_KEY = 'velora_atelier_lang';
+      let currentLang = 'en';
+
+      try {
+        const savedLang = localStorage.getItem(STORAGE_KEY);
+        if (savedLang === 'ru' || savedLang === 'en') {
+          currentLang = savedLang;
+        }
+      } catch (err) {
+        // Ignore storage errors in restricted contexts
+      }
+
+      const getNestedTranslation = (obj, path) => {
+        return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : null), obj);
+      };
+
+      const applyLanguage = (lang) => {
+        currentLang = lang === 'ru' ? 'ru' : 'en';
+        const dict = TRANSLATIONS[currentLang];
+
+        document.documentElement.lang = currentLang;
+        document.title = dict.pageTitle;
+
+        try {
+          localStorage.setItem(STORAGE_KEY, currentLang);
+        } catch (err) {
+          // Ignore storage errors
+        }
+
+        // Update active state on all EN / RU switcher buttons
+        document.querySelectorAll('[data-lang-btn]').forEach((btn) => {
+          const isMatch = btn.dataset.langBtn === currentLang;
+          btn.classList.toggle('is-active', isMatch);
+          btn.setAttribute('aria-pressed', String(isMatch));
+        });
+
+        // Update text nodes
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+          const key = el.dataset.i18n;
+          const value = getNestedTranslation(dict, key);
+          if (typeof value === 'string') {
+            el.textContent = value;
+          }
+        });
+
+        // Update SVG text elements
+        document.querySelectorAll('[data-i18n-svg]').forEach((el) => {
+          const key = el.dataset.i18nSvg;
+          const value = getNestedTranslation(dict, key);
+          if (typeof value === 'string') {
+            el.textContent = value;
+          }
+        });
+
+        // Update input & textarea placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+          const key = el.dataset.i18nPlaceholder;
+          const value = getNestedTranslation(dict, key);
+          if (typeof value === 'string') {
+            el.setAttribute('placeholder', value);
+          }
+        });
+
+        // Re-render dossier summary if visible
+        if (confirmationBox && confirmationBox.classList.contains('is-visible') && lastSubmittedData) {
+          renderDossierSummary(lastSubmittedData);
+        }
+      };
+
+      document.querySelectorAll('[data-lang-btn]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          applyLanguage(btn.dataset.langBtn);
+        });
+      });
+
+      // 1. Dynamic Footer Year
+      const yearEl = document.getElementById('currentYear');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // 2. Sticky Header Scroll State
+      const header = document.getElementById('siteHeader');
+      const handleScroll = () => {
+        if (window.scrollY > 36) {
+          header.classList.add('is-scrolled');
+        } else {
+          header.classList.remove('is-scrolled');
+        }
+      };
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      // 3. Accessible Mobile Navigation Drawer
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const drawerLinks = mobileDrawer.querySelectorAll('a');
+
+      const toggleDrawer = (forceClose = false) => {
+        const isOpen = forceClose ? false : menuToggle.getAttribute('aria-expanded') !== 'true';
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        mobileDrawer.setAttribute('aria-hidden', String(!isOpen));
+        mobileDrawer.classList.toggle('is-open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      };
+
+      menuToggle.addEventListener('click', () => toggleDrawer());
+      drawerLinks.forEach((link) => {
+        link.addEventListener('click', () => toggleDrawer(true));
+      });
+
+      // 4. Subtle Editorial Scroll Reveal
+      const revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        revealEls.forEach((el) => revealObserver.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add('is-visible'));
+      }
+
+      // 5. Featured Designs Filter Tabs
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const designItems = document.querySelectorAll('.design-item');
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+
+          filterBtns.forEach((b) => {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-selected', 'true');
+
+          designItems.forEach((item) => {
+            const tags = item.dataset.tags || '';
+            if (filter === 'all' || tags.includes(filter)) {
+              item.classList.remove('is-hidden');
+            } else {
+              item.classList.add('is-hidden');
+            }
+          });
+        });
+      });
+
+      // 6. Pre-fill Form from Collection & Featured Design CTAs
+      const setRadioValue = (name, value) => {
+        const radio = document.querySelector(`input[name="${name}"][value="${value}"]`);
+        if (radio) radio.checked = true;
+      };
+
+      // Women / Girls Collection CTA Pre-selection
+      document.querySelectorAll('[data-select-category]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const category = btn.dataset.selectCategory;
+          setRadioValue('customerCategory', category);
+        });
+      });
+
+      // Featured Design Inquire Links Pre-selection
+      document.querySelectorAll('.design-item__inquire').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (link.dataset.prefillPurpose) setRadioValue('leotardPurpose', link.dataset.prefillPurpose);
+          if (link.dataset.prefillType) setRadioValue('gymnasticsType', link.dataset.prefillType);
+          if (link.dataset.prefillDesign) setRadioValue('designPreference', link.dataset.prefillDesign);
+          const noteKey = link.dataset.prefillNoteKey;
+          if (noteKey) {
+            const commentsField = document.getElementById('comments');
+            const noteText = TRANSLATIONS[currentLang].featured.cards[noteKey]?.prefillNote;
+            if (commentsField && noteText && !commentsField.value.trim()) {
+              commentsField.value = noteText + ' — ';
+            }
+          }
+        });
+      });
+
+      // 7. Measurement Guide Modal
+      const measurementModal = document.getElementById('measurementModal');
+      const openGuideBtn = document.getElementById('openMeasurementGuide');
+      const closeGuideBtn = document.getElementById('closeMeasurementGuide');
+
+      const setModalState = (open) => {
+        measurementModal.classList.toggle('is-open', open);
+        measurementModal.setAttribute('aria-hidden', String(!open));
+        document.body.style.overflow = open ? 'hidden' : '';
+        if (open) closeGuideBtn.focus();
+      };
+
+      openGuideBtn.addEventListener('click', () => setModalState(true));
+      closeGuideBtn.addEventListener('click', () => setModalState(false));
+      measurementModal.addEventListener('click', (e) => {
+        if (e.target === measurementModal) setModalState(false);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          if (measurementModal.classList.contains('is-open')) setModalState(false);
+          if (mobileDrawer.classList.contains('is-open')) toggleDrawer(true);
+        }
+      });
+
+      // 8. Custom Order Form Validation & Atelier Dossier Summary
+      const orderForm = document.getElementById('atelierOrderForm');
+      const confirmationBox = document.getElementById('orderConfirmation');
+      const dossierSummary = document.getElementById('dossierSummary');
+      const resetFormBtn = document.getElementById('resetOrderForm');
+      let lastSubmittedData = null;
+
+      const validateField = (inputId, groupId, validator) => {
+        const input = document.getElementById(inputId);
+        const group = document.getElementById(groupId);
+        const isValid = validator(input.value.trim());
+        group.classList.toggle('has-error', !isValid);
+        return isValid;
+      };
+
+      const renderDossierSummary = (data) => {
+        const d = TRANSLATIONS[currentLang].order.dossier;
+        const translateVal = (val) => d.values[val] || val;
+
+        const measurementsText = [
+          data.height ? `${d.units.height}: ${data.height} ${d.units.cm}` : null,
+          data.chest ? `${d.units.chest}: ${data.chest} ${d.units.cm}` : null,
+          data.waist ? `${d.units.waist}: ${data.waist} ${d.units.cm}` : null,
+          data.hip ? `${d.units.hip}: ${data.hip} ${d.units.cm}` : null,
+          data.torsoGirth ? `${d.units.torso}: ${data.torsoGirth} ${d.units.cm}` : null,
+        ].filter(Boolean).join(' · ') || d.consultMeasurements;
+
+        dossierSummary.innerHTML = `
+          <div><strong>${escapeHtml(d.client)}</strong>${escapeHtml(data.fullName)} (${escapeHtml(data.country)})</div>
+          <div><strong>${escapeHtml(d.preferredContact)}</strong>${escapeHtml(translateVal(data.contactMethod))} &mdash; ${escapeHtml(data.phone)}</div>
+          <div><strong>${escapeHtml(d.commissionLine)}</strong>${escapeHtml(translateVal(data.customerCategory))} &middot; ${escapeHtml(translateVal(data.gymnasticsType))} &middot; ${escapeHtml(translateVal(data.leotardPurpose))}</div>
+          <div><strong>${escapeHtml(d.designDirection)}</strong>${escapeHtml(translateVal(data.designPreference))}</div>
+          <div><strong>${escapeHtml(d.preferredPalette)}</strong>${escapeHtml(data.preferredColors || d.notSpecified)}</div>
+          <div><strong>${escapeHtml(d.competitionDate)}</strong>${escapeHtml(data.competitionDate || d.flexibleDate)}</div>
+          <div style="grid-column: 1 / -1;"><strong>${escapeHtml(d.submittedMeasurements)}</strong>${escapeHtml(measurementsText)}</div>
+        `;
+      };
+
+      orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const validName = validateField('fullName', 'group-fullName', (v) => v.length >= 2);
+        const validEmail = validateField('email', 'group-email', (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+        const validPhone = validateField('phone', 'group-phone', (v) => v.length >= 6);
+        const validCountry = validateField('country', 'group-country', (v) => v.length >= 2);
+
+        if (!validName || !validEmail || !validPhone || !validCountry) {
+          const firstError = orderForm.querySelector('.has-error input');
+          if (firstError) firstError.focus();
+          return;
+        }
+
+        const formData = new FormData(orderForm);
+        const getVal = (key) => (formData.get(key) || '').toString().trim();
+
+        lastSubmittedData = {
+          fullName: getVal('fullName'),
+          email: getVal('email'),
+          phone: getVal('phone'),
+          country: getVal('country'),
+          contactMethod: getVal('contactMethod'),
+          customerCategory: getVal('customerCategory'),
+          gymnasticsType: getVal('gymnasticsType'),
+          leotardPurpose: getVal('leotardPurpose'),
+          designPreference: getVal('designPreference'),
+          preferredColors: getVal('preferredColors'),
+          competitionDate: getVal('competitionDate'),
+          height: getVal('height'),
+          chest: getVal('chest'),
+          waist: getVal('waist'),
+          hip: getVal('hip'),
+          torsoGirth: getVal('torsoGirth'),
+        };
+
+        renderDossierSummary(lastSubmittedData);
+
+        orderForm.style.display = 'none';
+        confirmationBox.classList.add('is-visible');
+        confirmationBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+
+      resetFormBtn.addEventListener('click', () => {
+        orderForm.reset();
+        lastSubmittedData = null;
+        confirmationBox.classList.remove('is-visible');
+        orderForm.style.display = 'block';
+      });
+
+      function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+      }
+
+      // Initialize language on load
+      applyLanguage(currentLang);
+    })();
+  </script>
+</body>
+</html>
